@@ -15,7 +15,6 @@ const CateringServices = () => {
         'Professional coordination',
         'Complete setup service'
       ],
-      price: 'Starting at ???',
       popular: false,
       image: '/packagesimg/bbap/hero.jpg',
       themes: ['Adventure', 'Fantasy']
@@ -31,7 +30,6 @@ const CateringServices = () => {
         'Professional photography coordination',
         'Themed decorations'
       ],
-      price: 'Starting at ???',
       popular: false,
       image: '/packagesimg/debutant/hero.jpg',
       themes: ['Roses', 'Treasures']
@@ -47,7 +45,6 @@ const CateringServices = () => {
         'Elegant table settings',
         'Bridal coordination'
       ],
-      price: 'Starting at ???',
       popular: true,
       image: '/packagesimg/wedding/hero.jpg',
       themes: ['Love', 'Honey']
@@ -106,7 +103,6 @@ const CateringServices = () => {
                 {/* Title and Price */}
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{service.title}</h3>
-                  <p className="text-sm text-amber-600 font-semibold">{service.price}</p>
                 </div>
 
                 {/* Description */}

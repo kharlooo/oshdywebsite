@@ -364,7 +364,7 @@ const ThemeDetail = () => {
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
-        {theme.title} Inclusions & Prices
+        {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
         A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
@@ -398,27 +398,26 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Package Pricing</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
             </div>
             <div className="space-y-6">
-              {[
-                { pax: '100 Pax', price: '₱45,000' },
-                { pax: '50 Pax', price: '₱35,000' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-amber-100/40 border border-amber-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-between"
-                >
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.pax}</h4>
-                    <p className="text-sm text-gray-500">Complete celebration package</p>
-                  </div>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
-                </div>
-              ))}
-            </div>
+  {[
+    { pax: '100 Pax' },
+    { pax: '50 Pax' }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+    >
+      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+        {item.pax}
+      </h4>
+    </div>
+  ))}
+</div>
+
             <div className="mt-6 text-center text-sm italic text-gray-500">
-              Price includes setup, service & cleanup
+              Download the app to see the prices.
             </div>
           </div>
         </div>
@@ -476,7 +475,7 @@ const ThemeDetail = () => {
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
-        {theme.title} Inclusions & Prices
+        {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
         A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
@@ -510,27 +509,26 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Package Pricing</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
             </div>
             <div className="space-y-6">
-              {[
-                { pax: '100 Pax', price: '₱50,000' },
-                { pax: '50 Pax', price: '₱40,000' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-amber-100/40 border border-amber-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-between"
-                >
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.pax}</h4>
-                    <p className="text-sm text-gray-500">Complete celebration package</p>
-                  </div>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
-                </div>
-              ))}
-            </div>
+  {[
+    { pax: '100 Pax' },
+    { pax: '50 Pax' }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+    >
+      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+        {item.pax}
+      </h4>
+    </div>
+  ))}
+</div>
+
             <div className="mt-6 text-center text-sm italic text-gray-500">
-              Price includes setup, service & cleanup
+              Download the app to see the prices.
             </div>
           </div>
         </div>
@@ -588,7 +586,7 @@ const ThemeDetail = () => {
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
-        {theme.title} Inclusions & Prices
+        {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
         A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
@@ -622,27 +620,26 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Package Pricing</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
             </div>
             <div className="space-y-6">
-              {[
-                { pax: '100 Pax', price: '₱45,000' },
-                { pax: '50 Pax', price: '₱35,000' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-amber-100/40 border border-amber-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-between"
-                >
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.pax}</h4>
-                    <p className="text-sm text-gray-500">Complete celebration package</p>
-                  </div>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
-                </div>
-              ))}
-            </div>
+  {[
+    { pax: '100 Pax' },
+    { pax: '50 Pax' }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+    >
+      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+        {item.pax}
+      </h4>
+    </div>
+  ))}
+</div>
+
             <div className="mt-6 text-center text-sm italic text-gray-500">
-              Price includes setup, service & cleanup
+              Download the app to see the prices.
             </div>
           </div>
         </div>
@@ -700,7 +697,7 @@ const ThemeDetail = () => {
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
-        {theme.title} Inclusions & Prices
+        {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
         A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
@@ -734,27 +731,26 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Package Pricing</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
             </div>
             <div className="space-y-6">
-              {[
-                { pax: '100 Pax', price: '₱40,000' },
-                { pax: '50 Pax', price: '₱30,000' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-amber-100/40 border border-amber-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-between"
-                >
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.pax}</h4>
-                    <p className="text-sm text-gray-500">Complete celebration package</p>
-                  </div>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
-                </div>
-              ))}
-            </div>
+  {[
+    { pax: '100 Pax' },
+    { pax: '50 Pax' }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+    >
+      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+        {item.pax}
+      </h4>
+    </div>
+  ))}
+</div>
+
             <div className="mt-6 text-center text-sm italic text-gray-500">
-              Price includes setup, service & cleanup
+              Download the app to see the prices.
             </div>
           </div>
         </div>
@@ -812,7 +808,7 @@ const ThemeDetail = () => {
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
-        {theme.title} Inclusions & Prices
+        {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
         A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
@@ -845,27 +841,26 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Package Pricing</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
             </div>
             <div className="space-y-6">
-              {[
-                { pax: '100 Pax', price: '₱40,000' },
-                { pax: '50 Pax', price: '₱30,000' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-amber-100/40 border border-amber-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-between"
-                >
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.pax}</h4>
-                    <p className="text-sm text-gray-500">Complete celebration package</p>
-                  </div>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
-                </div>
-              ))}
-            </div>
+  {[
+    { pax: '100 Pax' },
+    { pax: '50 Pax' }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+    >
+      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+        {item.pax}
+      </h4>
+    </div>
+  ))}
+</div>
+
             <div className="mt-6 text-center text-sm italic text-gray-500">
-              Price includes setup, service & cleanup
+              Download the app to see the prices.
             </div>
           </div>
         </div>
@@ -921,7 +916,7 @@ const ThemeDetail = () => {
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
       <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
-        {theme.title} Inclusions & Prices
+        {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
         A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
@@ -955,27 +950,26 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Package Pricing</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
             </div>
             <div className="space-y-6">
-              {[
-                { pax: '100 Pax', price: '₱38,000' },
-                { pax: '50 Pax', price: '₱28,000' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-amber-100/40 border border-amber-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-between"
-                >
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{item.pax}</h4>
-                    <p className="text-sm text-gray-500">Complete celebration package</p>
-                  </div>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
-                </div>
-              ))}
-            </div>
+  {[
+    { pax: '100 Pax' },
+    { pax: '50 Pax' }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+    >
+      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+        {item.pax}
+      </h4>
+    </div>
+  ))}
+</div>
+
             <div className="mt-6 text-center text-sm italic text-gray-500">
-              Price includes setup, service & cleanup
+              Download the app to see the prices.
             </div>
           </div>
         </div>

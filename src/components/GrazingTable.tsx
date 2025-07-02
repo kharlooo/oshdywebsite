@@ -14,8 +14,8 @@ const GrazingTable = () => {
       bgGradient: 'from-amber-100 to-orange-100',
       description: 'Traditional Filipino delicacies and sweet treats',
       pricing: [
-        { pax: 100, price: '12K' },
-        { pax: 50, price: '8K' }
+        { pax: 100},
+        { pax: 50}
       ]
     },
     {
@@ -25,8 +25,8 @@ const GrazingTable = () => {
       bgGradient: 'from-green-100 to-emerald-100',
       description: 'Premium selection of fruits, deli, and baked goods',
       pricing: [
-        { pax: 100, price: '15K' },
-        { pax: 50, price: '10K' }
+        { pax: 100},
+        { pax: 50}
       ]
     },
     {
@@ -36,8 +36,8 @@ const GrazingTable = () => {
       bgGradient: 'from-pink-100 to-purple-100',
       description: 'Delightful sweets and candy station for all ages',
       pricing: [
-        { pax: 100, price: '8K' },
-        { pax: 50, price: '5K' }
+        { pax: 100},
+        { pax: 50}
       ]
     }
   ];
@@ -82,13 +82,12 @@ const GrazingTable = () => {
                 <CardContent className="p-6 bg-white">
                   <div className="space-y-4">
                     <div className="text-center">
-                      <h4 className="font-semibold text-gray-800 mb-3">Package Pricing</h4>
+                      <h4 className="font-semibold text-gray-800 mb-3">Packages includes the following:</h4>
                       <div className="space-y-2">
                         {pkg.pricing.map((price, index) => (
-                          <div key={index} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-                            <span className="text-gray-700 font-medium">{price.pax} Pax</span>
-                            <span className="text-amber-600 font-bold text-lg">₱{price.price}</span>
-                          </div>
+                          <div key={index} className="flex items-center justify-center bg-amber-50 text-amber-800 font-bold shadow-sm rounded-xl py-3 px-4 text-center">
+  <span className="text-lg">{price.pax} Pax</span>
+</div>
                         ))}
                       </div>
                     </div>

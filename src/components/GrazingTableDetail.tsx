@@ -149,24 +149,23 @@ const GrazingTableDetail = () => {
             <Card className="shadow-xl border-2 border-amber-200">
               <CardHeader className="bg-gradient-to-r from-amber-50 to-orange-50">
                 <CardTitle className="text-2xl font-bold text-gray-900 text-center">
-                  Package Pricing
+                  Packages
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-8">
                 <div className="space-y-6">
                   {currentPackage.pricing.map((price, index) => (
-                    <div key={index} className="bg-white p-6 rounded-xl border-2 border-amber-100 shadow-md">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-800">{price.pax} Pax</h3>
-                          <p className="text-gray-600">Perfect for your event size</p>
-                        </div>
-                        <div className="text-right">
-                          <span className="text-3xl font-bold text-amber-600">₱{price.price}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+  <div key={index} className="bg-white p-6 rounded-xl border-2 border-amber-100 shadow-md">
+    <div className="flex flex-col items-center text-center">
+      <h3 className="text-xl font-bold text-gray-800">{price.pax} Pax</h3>
+      <p className="text-gray-600">
+        {price.pax === 100
+          ? 'Ideal for large gatherings or grand celebrations'
+          : 'Perfect for cozy events and intimate groups'}
+      </p>
+    </div>
+  </div>
+))}
                 </div>
                 <div className="mt-8 p-4 bg-amber-50 rounded-lg border border-amber-200">
                   <p className="text-amber-800 text-sm font-medium text-center">
