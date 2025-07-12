@@ -11,6 +11,8 @@ import ThemeDetailPage from "./pages/ThemeDetail";
 import MenuPage from "./pages/Menu";
 import GrazingTableDetailPage from "./pages/GrazingTableDetail";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/grazing/:packageId" element={<GrazingTableDetailPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

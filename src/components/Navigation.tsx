@@ -15,27 +15,20 @@ const Navigation = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    setIsMenuOpen(false);
-    
-    const sectionId = href.replace('/#', '');
-    
-    // If we're already on the homepage, scroll to the section
-    if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // If we're on a different page, navigate to homepage and then scroll
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100); // Small delay to ensure page loads
+  setIsMenuOpen(false);
+  const sectionId = href.replace('/#', '');
+
+  if (location.pathname === '/') {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  } else {
+    // Save scroll target before navigating
+    sessionStorage.setItem('scrollToSection', sectionId);
+    navigate('/');
+  }
+};
 
   return (
     <nav className="bg-white shadow-lg fixed w-full top-0 z-50">

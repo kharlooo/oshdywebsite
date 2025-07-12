@@ -1,5 +1,5 @@
-
 import { Heart, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -73,15 +73,12 @@ const Footer = () => {
               © {currentYear} OSHDY. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-amber-400 transition-colors duration-200">
+              <Link to="/privacy-policy" className="hover:text-amber-400 transition-colors duration-200">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-amber-400 transition-colors duration-200">
+              </Link>
+              <Link to="/terms-of-service" className="hover:text-amber-400 transition-colors duration-200">
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-amber-400 transition-colors duration-200">
-                Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
           
