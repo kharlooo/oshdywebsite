@@ -292,7 +292,12 @@ const ThemeDetail = () => {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      onClick={() => navigate(-1)}
+      onClick={() => {
+  navigate(-1);
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 50); // small delay to wait for navigation
+}}
       className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
       aria-label="Go Back"
     >
