@@ -54,8 +54,8 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">1</span>
-              <Shield className="w-5 h-5 text-amber-600" />
               <span>Information We Collect</span>
+              <Shield className="w-5 h-5 text-amber-600" />
             </div>
             <p>Our website is designed for informational purposes. We do not collect personal information such as names, phone numbers, or email addresses directly through the website. However, we may use basic web analytics tools (like cookies or similar technologies) to understand user behavior and improve our content.</p>
           </motion.section>
@@ -63,8 +63,8 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.1 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">2</span>
-              <FileText className="w-5 h-5 text-amber-600" />
               <span>How We Use Information</span>
+              <FileText className="w-5 h-5 text-amber-600" />
             </div>
             <p>The information we collect via analytics is used solely for:</p>
             <ul className="list-disc pl-5 mt-2">
@@ -78,8 +78,8 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.2 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">3</span>
-              <Lock className="w-5 h-5 text-amber-600" />
               <span>Data Security</span>
+              <Lock className="w-5 h-5 text-amber-600" />
             </div>
             <p>We take reasonable steps to secure our website and any analytics data. Our hosting and security providers follow modern best practices, but no method of transmission over the Internet is 100% secure.</p>
           </motion.section>
@@ -87,8 +87,8 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.3 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">4</span>
-              <ExternalLink className="w-5 h-5 text-amber-600" />
               <span>Third-Party Links</span>
+              <ExternalLink className="w-5 h-5 text-amber-600" />
             </div>
             <p>Our website contains links to download our mobile application. Once you leave our site, your data will be governed by the policies of the third-party platforms (e.g., Google Play Store, Apple App Store).</p>
           </motion.section>
@@ -96,8 +96,8 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.4 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">5</span>
-              <Mail className="w-5 h-5 text-amber-600" />
               <span>Contact Us</span>
+              <Mail className="w-5 h-5 text-amber-600" />
             </div>
             <p>If you have any questions about this policy, you may contact us at:</p>
             <p className="mt-2">
@@ -109,8 +109,8 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.5 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">6</span>
-              <RefreshCcw className="w-5 h-5 text-amber-600" />
               <span>Updates to This Policy</span>
+              <RefreshCcw className="w-5 h-5 text-amber-600" />
             </div>
             <p>We may revise this policy from time to time. The latest version will always be available on our website with the updated date.</p>
           </motion.section>
