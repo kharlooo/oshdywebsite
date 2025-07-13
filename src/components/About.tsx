@@ -10,25 +10,25 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: 'Jessica Soho',
-      role: 'Executive Chef',
-      description: 'Culinary graduate with 12+ years creating memorable dining experiences',
-      image: '/soho.jpg',
-      imageAlt: 'Professional headshot of Executive Chef Sarah Johnson'
+      name: '(name)',
+      role: '(role)',
+      description: '(description)',
+      image: 'example.jpg', 
+      imageAlt: '(professional headshot)'
     },
     {
-      name: 'Alden Recharge',
-      role: 'Event Director',
-      description: 'Expert event coordinator ensuring flawless execution of every celebration',
-      image: '/alden.jpg',
-      imageAlt: 'Professional headshot of Event Director Michael Chen'
+      name: '(name)',
+      role: '(role)',
+      description: '(description)',
+      image: 'example.jpg', 
+      imageAlt: '(professional headshot)'
     },
     {
-      name: 'Bleh',
-      role: 'Operations Manager',
-      description: 'Logistics specialist managing seamless coordination from planning to cleanup',
-      image: '/malupiton.jpg',
-      imageAlt: 'Professional headshot of Operations Manager Emily Rodriguez'
+      name: '(name)',
+      role: '(role)',
+      description: '(description)',
+      image: 'example.jpg', 
+      imageAlt: '(professional headshot)'
     }
   ];
 
@@ -78,8 +78,8 @@ const About = () => {
           {/* Image Placeholder */}
           <div className="h-96 rounded-lg overflow-hidden shadow-md">
   <img
-    src="/team.jpg"
-    alt="Our catering team in action"
+    src="example.jpg"
+    alt="(catering team)"
     className="w-full h-full object-cover"
   />
 </div>
