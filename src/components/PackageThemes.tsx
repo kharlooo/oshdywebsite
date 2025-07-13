@@ -110,6 +110,11 @@ const PackageThemes = () => {
     }
   };
 
+  const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
   const packageInfo = packageData[packageId as keyof typeof packageData];
 
   if (!packageInfo) {
@@ -158,7 +163,13 @@ const PackageThemes = () => {
       {/* Theme Cards */}
       <div className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <motion.div
+  className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.5 }}
+>
             {packageInfo.themes.map((theme) => (
               <div
                 key={theme.name}
@@ -207,12 +218,18 @@ const PackageThemes = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* CTA */}
-      <div className="py-16 bg-gray-50">
+      <motion.div
+  className="py-16 bg-gray-50"
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.5, delay: 0.2 }}
+>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Need Help Choosing?</h2>
           <p className="text-lg text-gray-600 mb-8">
@@ -227,7 +244,7 @@ const PackageThemes = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

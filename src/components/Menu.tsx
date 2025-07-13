@@ -1,4 +1,5 @@
 
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import {
   ArrowLeft,
@@ -45,6 +46,11 @@ const Menu = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
   const menuCategories = [
     {
@@ -185,7 +191,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+  <div className="min-h-screen pt-16">
       {/* Back Button */}
       <button
         onClick={() => {
@@ -215,15 +221,27 @@ const Menu = () => {
               experience.
             </p>
           </div>
-          <div className="inline-block bg-amber-100 text-amber-800 font-semibold px-6 py-2 rounded-full text-sm shadow-sm">
-            8 Categories • Fresh Daily • Made to Order
-          </div>
+          <motion.div
+  className="inline-block bg-amber-100 text-amber-800 font-semibold px-6 py-2 rounded-full text-sm shadow-sm"
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.4 }}
+>
+  8 Categories • Fresh Daily • Made to Order
+</motion.div>
         </div>
       </header>
 
       {/* Category Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <motion.section
+  className="py-20 bg-white"
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.4 }}
+>        
+<div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {menuCategories.map((category, index) => (
             <Card
               key={index}
@@ -263,7 +281,7 @@ const Menu = () => {
             </Card>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Modal Gallery */}
       {modalOpen && (

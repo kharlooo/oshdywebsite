@@ -83,6 +83,11 @@ const GrazingTableDetail = () => {
     }
   };
 
+  const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
   const currentPackage = packageData[packageId as keyof typeof packageData];
 
   if (!currentPackage) {
@@ -117,30 +122,42 @@ const GrazingTableDetail = () => {
   <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12">
       
-      {/* Image on the left */}
-      <div className="w-full lg:w-1/2">
-        <img 
-          src={`/${packageId}.jpg`} 
-          alt={currentPackage.title} 
-          className="w-full rounded-2xl shadow-lg border border-gray-200 object-cover h-80"
-        />
-      </div>
+      {/* Image on the left with animation */}
+<motion.div
+  className="w-full lg:w-1/2"
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.5 }}
+>
+  <img 
+    src={`/${packageId}.jpg`} 
+    alt={currentPackage.title} 
+    className="w-full rounded-2xl shadow-lg border border-gray-200 object-cover h-80"
+  />
+</motion.div>
 
-      {/* Info on the right */}
-      <div className="w-full lg:w-1/2 text-center lg:text-left">
-        <div className="flex items-center justify-center lg:justify-start mb-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            {currentPackage.title}
-          </h1>
-        </div>
-        <p className="text-xl text-gray-700 leading-relaxed">
-          {currentPackage.description}
-        </p>
-      </div>
+{/* Info on the right with animation */}
+<motion.div
+  className="w-full lg:w-1/2 text-center lg:text-left"
+  variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.5, delay: 0.15 }}
+>
+  <div className="flex items-center justify-center lg:justify-start mb-6">
+    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+      {currentPackage.title}
+    </h1>
+  </div>
+  <p className="text-xl text-gray-700 leading-relaxed">
+    {currentPackage.description}
+  </p>
+</motion.div>
+
     </div>
   </div>
 </div>
-
       {/* Package Details */}
       <div className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

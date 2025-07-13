@@ -271,6 +271,11 @@ const ThemeDetail = () => {
     }
   };
 
+  const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
   const theme = themeData[themeId as keyof typeof themeData];
 
   if (!theme) {
@@ -310,9 +315,15 @@ const ThemeDetail = () => {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
           <div>
-            <div className="mb-4">
+            <motion.div 
+            className="mb-4"
+            variants={fadeUp}
+  initial="hidden"
+  animate="visible"
+  transition={{ duration: 0.4, delay: 0.2}}
+            >
               <theme.icon className="w-16 h-16 mx-auto text-amber-400" />
-            </div>
+            </motion.div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{theme.title}</h1>
             <p className="text-xl md:text-2xl">{theme.subtitle}</p>
           </div>
