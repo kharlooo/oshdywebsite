@@ -241,7 +241,7 @@ const Menu = () => {
   animate="visible"
   transition={{ duration: 0.4 }}
 >        
-<div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {menuCategories.map((category, index) => (
             <Card
               key={index}
@@ -286,39 +286,55 @@ const Menu = () => {
       {/* Modal Gallery */}
       {modalOpen && (
         <Dialog open={modalOpen} onOpenChange={closeGallery}>
-          <DialogContent className="max-w-6xl w-full p-0 bg-transparent border-none overflow-hidden">
-
-            <Carousel className="w-full">
-              <CarouselContent>
-                {selectedImages.map((img, i) => (
-                  <CarouselItem key={i}>
-                    <div className="relative w-full h-[80vh] flex items-center justify-center p-4">
-                      <img
-                        src={img}
-                        alt={getImageLabel(selectedCategory, i)}
-                        className="max-h-full max-w-full object-contain rounded-lg shadow-lg"
-                      />
-                      
-                      {/* Image Label */}
-                      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 text-gray-900 px-6 py-3 rounded-full shadow-lg">
-                        <div className="text-center">
-                          <p className="font-medium text-sm">
-                            {getImageLabel(selectedCategory, i)}
-                          </p>
-                          <p className="text-xs text-gray-600 mt-1">
-                            {i + 1} of {selectedImages.length}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-
-              <CarouselPrevious className="left-4 z-40 bg-white/90 hover:bg-white text-gray-700 border-gray-200 shadow-lg" />
-              <CarouselNext className="right-4 z-40 bg-white/90 hover:bg-white text-gray-700 border-gray-200 shadow-lg" />
-            </Carousel>
-          </DialogContent>
+          <DialogContent
+  className="custom-gallery-modal max-w-6xl w-full p-0 bg-transparent border-none overflow-hidden rounded-xl
+    sm:p-0 sm:rounded-2xl md:p-0 md:rounded-2xl flex items-center justify-center
+    max-sm:max-w-full max-sm:w-[95vw] max-sm:p-2 max-sm:rounded-xl max-sm:justify-start max-sm:mt-0"
+  style={{ maxWidth: '95vw' }}
+>
+  {/* Custom Close Button */}
+  <button
+    onClick={closeGallery}
+    className="absolute top-4 right-4 z-50 bg-white/90 hover:bg-white text-gray-700 border border-gray-200 shadow-lg rounded-full p-2 transition-colors duration-200"
+    aria-label="Close"
+    type="button"
+    style={{ lineHeight: 0 }}
+  >
+    <X className="w-3 h-3" />
+  </button>
+  <Carousel className="w-full">
+    <CarouselContent>
+      {selectedImages.map((img, i) => (
+        <CarouselItem key={i}>
+          <div
+            className="relative w-full h-[60vh] flex items-center justify-center p-2 sm:h-[80vh] sm:p-4 rounded-xl"
+          >
+            <img
+              src={img}
+              alt={getImageLabel(selectedCategory, i)}
+              className="max-h-[50vh] max-w-full object-contain rounded-lg shadow-lg sm:max-h-full sm:rounded-lg"
+            />
+            {/* Image Label */}
+            <div
+              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 text-gray-900 px-4 py-2 rounded-full shadow-lg w-[90vw] max-w-xs text-xs sm:px-6 sm:py-3 sm:max-w-md sm:text-sm"
+            >
+              <div className="text-center">
+                <p className="font-medium truncate">
+                  {getImageLabel(selectedCategory, i)}
+                </p>
+                <p className="text-[10px] text-gray-600 mt-1 sm:text-xs">
+                  {i + 1} of {selectedImages.length}
+                </p>
+              </div>
+            </div>
+          </div>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious className="left-4 z-40 bg-white/90 hover:bg-white text-gray-700 border-gray-200 shadow-lg" />
+    <CarouselNext className="right-4 z-40 bg-white/90 hover:bg-white text-gray-700 border-gray-200 shadow-lg" />
+  </Carousel>
+</DialogContent>
         </Dialog>
       )}
 
