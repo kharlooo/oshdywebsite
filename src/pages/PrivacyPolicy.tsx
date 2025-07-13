@@ -68,8 +68,7 @@ const PrivacyPolicy = () => {
             </div>
             <p>The information we collect via analytics is used solely for:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li>Improving website performance and user experience</li>
-              <li>Understanding what pages are visited most</li>
+              <li>Improving website performance</li>
               <li>Identifying technical issues</li>
             </ul>
             <p className="mt-2">We do not sell or share your data with third parties for marketing.</p>

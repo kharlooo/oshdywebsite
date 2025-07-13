@@ -152,23 +152,28 @@ const Menu = () => {
       'mechado.jpg',
       '/images/beef/3.jpg',
       '/images/beef/4.jpg',
+      '/images/beef/5.jpg',
     ],
     'Pork (Pick One)': [
       '/images/pork/1.jpg',
       '/images/pork/2.jpg',
       '/images/pork/3.jpg',
+      '/images/pork/4.jpg',
+      '/images/pork/5.jpg',
     ],
     'Chicken (Pick One)': [
       '/images/chicken/1.jpg',
       '/images/chicken/2.jpg',
       '/images/chicken/3.jpg',
       '/images/chicken/4.jpg',
+      '/images/chicken/5.jpg',
+      '/images/chicken/6.jpg',
     ],
-    'Fish Fillet (Pick One)': ['/images/fish/1.jpg', '/images/fish/2.jpg'],
-    'Mixed Vegie (Pick One)': ['/images/vegie/1.jpg'],
-    'Pasta or Noodles (Pick One)': ['/images/pasta/1.jpg', '/images/pasta/2.jpg'],
-    'Drinks (Pick One)': ['/images/drinks/1.jpg'],
-    'Dessert (Pick One)': ['/images/dessert/1.jpg', '/images/dessert/2.jpg'],
+    'Fish Fillet (Pick One)': ['/images/fish/1.jpg', '/images/fish/2.jpg', '/images/fish/3.jpg'],
+    'Mixed Vegie (Pick One)': ['/images/vegie/1.jpg', '/images/vegie/2.jpg', '/images/vegie/3.jpg', '/images/vegie/4.jpg', ],
+    'Pasta or Noodles (Pick One)': ['/images/pasta/1.jpg', '/images/pasta/2.jpg', '/images/pasta/3.jpg', '/images/pasta/4.jpg', '/images/pasta/5.jpg', '/images/pasta/6.jpg', '/images/pasta/7.jpg'],
+    'Drinks (Pick One)': ['/images/drinks/1.jpg', '/images/drinks/2.jpg', '/images/drinks/3.jpg', '/images/drinks/4.jpg'],
+    'Dessert (Pick One)': ['/images/dessert/1.jpg', '/images/dessert/2.jpg', '/images/dessert/3.jpg'],
   };
 
   const getImageLabel = (categoryTitle: string, imageIndex: number) => {
@@ -226,31 +231,34 @@ const Menu = () => {
               onClick={() => openGallery(category.title)}
             >
               <div className="relative h-36 w-full overflow-hidden rounded-t-xl">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:blur-sm transition-all duration-300"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-full font-semibold">
-                    View More
-                  </span>
-                </div>
-              </div>
+  <img
+    src={category.image}
+    alt={category.title}
+    className="absolute inset-0 w-full h-full object-cover group-hover:blur-sm transition-all duration-300"
+  />
+
+  {/* Icon in bottom-left */}
+  <div className="absolute bottom-2 left-2 z-10 bg-white rounded-full p-2 shadow-md">
+    {category.icon}
+  </div>
+
+  {/* Hover overlay */}
+  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <span className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-full font-semibold">
+      View More
+    </span>
+  </div>
+</div>
               <CardContent className="p-6 bg-white space-y-4">
-                <div className="flex items-center gap-3 text-lg font-semibold text-gray-900">
-                  <div className="bg-white p-2 rounded-full shadow-md">
-                    {category.icon}
-                  </div>
-                  <span>{category.title}</span>
-                </div>
+                <h3 className="text-lg font-semibold text-gray-900 text-center">{category.title}</h3>
                 <ul className="space-y-2">
-                  {category.items.map((item, i) => (
-                    <li key={i} className="text-gray-700 text-sm">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+  {category.items.map((item, i) => (
+    <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
+      <span className="w-2 h-2 rounded-full bg-amber-500 inline-flex self-center" />
+      <span>{item}</span>
+    </li>
+  ))}
+</ul>
               </CardContent>
             </Card>
           ))}

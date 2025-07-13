@@ -120,7 +120,7 @@ const About = () => {
                 <Phone className="w-6 h-6 text-amber-600" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
-              <p className="text-gray-600">(555) 123-4567</p>
+              <p className="text-gray-600">0981 377 7731</p>
             </div>
 
             <div className="text-center">
@@ -128,7 +128,7 @@ const About = () => {
                 <Mail className="w-6 h-6 text-amber-600" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Email Us</h4>
-              <p className="text-gray-600">oshdy@gmail.com</p>
+              <p className="text-gray-600">oshdyevents@gmail.com</p>
             </div>
 
             <div className="text-center">
@@ -137,8 +137,8 @@ const About = () => {
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Visit Us</h4>
               <p className="text-gray-600">
-                123 Celebration Ave<br />
-                Event City, EC 12345
+                P5 B46 L3 Centella Homes,<br />
+                Rodriguez, Philippines, 1860
               </p>
             </div>
           </div>

@@ -13,16 +13,25 @@ const Index = () => {
   const sectionId = sessionStorage.getItem('scrollToSection');
   if (sectionId) {
     const tryScroll = () => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (sectionId === 'top') {
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         sessionStorage.removeItem('scrollToSection');
       } else {
-        requestAnimationFrame(tryScroll);
+        // Try to scroll to section by ID
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          sessionStorage.removeItem('scrollToSection');
+        } else {
+          // Try again on next frame if not yet found
+          requestAnimationFrame(tryScroll);
+        }
       }
     };
 
-    tryScroll();
+    // Start scrolling attempt
+    requestAnimationFrame(tryScroll);
   }
 }, []);
 

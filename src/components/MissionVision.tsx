@@ -25,7 +25,7 @@ const MissionVision = () => {
               <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
             </div>
             <p className="text-gray-600 leading-relaxed mb-6">
-              To create unforgettable experiences through exceptional catering and event services, bringing people together to celebrate life's most precious moments with outstanding food, impeccable service, and attention to every detail.
+              To provide delicious, high quality food and exceptional service at prices that make catering accessible for everyone. We are committed to bringing flavorful experiences to every event big or small by combining fresh ingredients, professional presentation, and budget friendly options.
             </p>
             <div className="space-y-3">
               <div className="flex items-center">
@@ -48,7 +48,7 @@ const MissionVision = () => {
               <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
             </div>
             <p className="text-gray-600 leading-relaxed mb-6">
-              To be the premier event and catering service provider, recognized for our innovation, quality, and ability to transform ordinary gatherings into extraordinary celebrations that create lasting memories for our clients.
+              To be the go to catering choice for communities seeking unforgettable culinary experiences without breaking the bank. We envision a world where quality catering is no longer a luxury, but a standard available to all.
             </p>
             <div className="space-y-3">
               <div className="flex items-center">

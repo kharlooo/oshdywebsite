@@ -38,12 +38,13 @@ const Navigation = () => {
           <div className="flex-shrink-0 flex items-center">
             <div
   onClick={() => {
-    if (location.pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      navigate('/');
-    }
-  }}
+  if (location.pathname === '/') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    sessionStorage.setItem('scrollToSection', 'top');
+    navigate('/');
+  }
+}}
   className="flex items-center cursor-pointer"
 >
   <img 

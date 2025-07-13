@@ -1,4 +1,4 @@
-import { Heart, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Heart, MapPin, Phone, Mail, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -29,41 +29,31 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-amber-400 mr-3 mt-0.5 flex-shrink-0" />
                 <div className="text-gray-300 text-sm">
-                  123 Celebration Avenue<br />
-                  Event City, EC 12345
+                  P5 B46 L3 Centella Homes,<br />
+                  Rodriguez, Philippines, 1860
                 </div>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-amber-400 mr-3" />
-                <span className="text-gray-300 text-sm">(555) 123-4567</span>
+                <span className="text-gray-300 text-sm">0981 377 7731</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-amber-400 mr-3" />
-                <span className="text-gray-300 text-sm">oshdy@gmail.com</span>
+                <span className="text-gray-300 text-sm">oshdyevents@gmail.com</span>
               </div>
             </div>
           </div>
 
-          {/* Business Hours */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-400">Business Hours</h4>
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <Clock className="w-5 h-5 text-amber-400 mr-3" />
-                <div className="text-gray-300 text-sm">
-                  <div>Mon - Fri: 9:00 AM - 6:00 PM</div>
-                  <div>Sat: 10:00 AM - 4:00 PM</div>
-                  <div>Sun: By Appointment</div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-6">
-              <h5 className="font-semibold text-amber-400 mb-2">Emergency Contact</h5>
-              <p className="text-gray-300 text-sm">(555) 123-URGENT</p>
-              <p className="text-gray-400 text-xs">For day-of-event emergencies</p>
-            </div>
-          </div>
+          {/* Service Areas */}
+<div>
+  <h4 className="text-lg font-semibold mb-2 text-amber-400">Service Areas in the Philippines</h4>
+  <div className="flex items-start">
+    <Globe className="w-5 h-5 text-amber-400 mr-3 mt-0.5 flex-shrink-0" />
+    <div className="text-gray-300 text-sm leading-relaxed">
+  Quezon City &middot; Antipolo &middot; Aparri &middot; San Mateo &middot; Cainta &middot; Caloocan &middot; Pasig &middot; Rodriguez &middot; Manila &middot; Bugallon
+</div>
+  </div>
+</div>
         </div>
 
         {/* Bottom Section */}
