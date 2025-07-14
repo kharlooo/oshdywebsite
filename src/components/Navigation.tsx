@@ -52,10 +52,22 @@ const Navigation = () => {
     alt="OSHDY Event Catering Services Logo" 
     className="h-12 w-12 mr-3"
   />
-  <h1 className="text-2xl font-bold text-amber-600 font-serif tracking-wide">
-    <span className="hidden sm:inline">OSHDY Event Catering Services</span>
-    <span className="sm:hidden">OSHDY</span>
-  </h1>
+  <h1
+  className="text-2xl font-bold font-serif tracking-wide"
+  style={{
+    background: 'linear-gradient(to bottom, #fbbf24, #f59e0b)', // similar to amber-400 → amber-600
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    textShadow: `
+      -1px -1px 0 rgba(255, 255, 255, 0.3),  /* soft top highlight */
+      1px 1px 2px rgba(0, 0, 0, 0.2)         /* gentle shadow depth */
+    `
+  }}
+>
+  <span className="hidden sm:inline">OSHDY Event Catering Services</span>
+  <span className="sm:hidden">OSHDY</span>
+</h1>
+
 </div>
 
           </div>
