@@ -53,7 +53,7 @@ const Navigation = () => {
     className="h-12 w-12 mr-3"
   />
   <h1 className="text-2xl font-bold text-amber-600 font-serif tracking-wide">
-    <span className="hidden sm:inline">OSHDY Events</span>
+    <span className="hidden sm:inline">OSHDY Event Catering Services</span>
     <span className="sm:hidden">OSHDY</span>
   </h1>
 </div>

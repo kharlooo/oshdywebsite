@@ -56,7 +56,7 @@ const Menu = () => {
     {
       title: 'Beef (Pick One)',
       icon: <Beef className="w-8 h-8 text-red-600" />,
-      image: 'caldereta.jpg',
+      image: '/menu/beef/beefcaldereta.jpg',
       bgColor: 'bg-red-50',
       items: [
         'Beef Caldereta',
@@ -69,7 +69,7 @@ const Menu = () => {
     {
       title: 'Pork (Pick One)',
       icon: <ChefHat className="w-8 h-8 text-pink-600" />,
-      image: '/images/pork.jpg',
+      image: '/menu/pork/porkhoneyglaze.jpg',
       bgColor: 'bg-pink-50',
       items: [
         'Pork Honey Glaze',
@@ -82,7 +82,7 @@ const Menu = () => {
     {
       title: 'Chicken (Pick One)',
       icon: <Utensils className="w-8 h-8 text-yellow-600" />,
-      image: '/images/chicken.jpg',
+      image: '/menu/chicken/chickenalaking.jpg',
       bgColor: 'bg-yellow-50',
       items: [
         'Chicken Ala King',
@@ -96,7 +96,7 @@ const Menu = () => {
     {
       title: 'Fish Fillet (Pick One)',
       icon: <Fish className="w-8 h-8 text-blue-600" />,
-      image: '/images/fish.jpg',
+      image: '/menu/fish fillet/fishfillettartarsauce.jpg',
       bgColor: 'bg-blue-50',
       items: [
         'Fish Fillet Tartar Sauce',
@@ -107,7 +107,7 @@ const Menu = () => {
     {
       title: 'Mixed Vegie (Pick One)',
       icon: <Salad className="w-8 h-8 text-green-600" />,
-      image: '/images/vegie.jpg',
+      image: '/menu/mixed vegie/butteredmixedvegie.jpg',
       bgColor: 'bg-green-50',
       items: [
         'Buttered Mixed Vegie',
@@ -119,7 +119,7 @@ const Menu = () => {
     {
       title: 'Pasta or Noodles (Pick One)',
       icon: <ChefHat className="w-8 h-8 text-orange-600" />,
-      image: '/images/pasta.jpg',
+      image: '/menu/pasta or noodles/creamycarbonara.jpg',
       bgColor: 'bg-orange-50',
       items: [
         'Creamy Carbonara',
@@ -134,7 +134,7 @@ const Menu = () => {
     {
       title: 'Drinks (Pick One)',
       icon: <Coffee className="w-8 h-8 text-teal-600" />,
-      image: '/images/drinks.jpg',
+      image: '/menu/drinks/icetealemonade.jpg',
       bgColor: 'bg-teal-50',
       items: [
         'Ice Tea Lemonade',
@@ -146,7 +146,7 @@ const Menu = () => {
     {
       title: 'Dessert (Pick One)',
       icon: <IceCream className="w-8 h-8 text-purple-600" />,
-      image: '/images/dessert.jpg',
+      image: '/menu/dessert/bucopandan.jpg',
       bgColor: 'bg-purple-50',
       items: ['Buco Pandan', 'Coffee Jelly', 'Mango Jelly Float'],
     },
@@ -154,32 +154,58 @@ const Menu = () => {
 
   const galleryImages: Record<string, string[]> = {
     'Beef (Pick One)': [
-      'caldereta.jpg',
-      'mechado.jpg',
-      '/images/beef/3.jpg',
-      '/images/beef/4.jpg',
-      '/images/beef/5.jpg',
+      '/menu/beef/beefcaldereta.jpg',
+      '/menu/beef/beefmechado.jpg',
+      '/menu/beef/beefbrocolli.jpg',
+      '/menu/beef/beefwithmushroomsauce.jpg',
+      '/menu/beef/beefstirfry.jpg',
     ],
     'Pork (Pick One)': [
-      '/images/pork/1.jpg',
-      '/images/pork/2.jpg',
-      '/images/pork/3.jpg',
-      '/images/pork/4.jpg',
-      '/images/pork/5.jpg',
+      '/menu/pork/porkhoneyglaze.jpg',
+      '/menu/pork/porkmechado.jpg',
+      '/menu/pork/porkcaldereta.jpg',
+      '/menu/pork/porkhamonado.jpg',
+      '/menu/pork/porkinbbqsauce.jpg',
     ],
     'Chicken (Pick One)': [
-      '/images/chicken/1.jpg',
-      '/images/chicken/2.jpg',
-      '/images/chicken/3.jpg',
-      '/images/chicken/4.jpg',
-      '/images/chicken/5.jpg',
-      '/images/chicken/6.jpg',
+      '/menu/chicken/chickenalaking.jpg',
+      '/menu/chicken/chickencordonbleu.jpg',
+      '/menu/chicken/chickenterriyaki.jpg',
+      '/menu/chicken/chickenmachurian.jpg',
+      '/menu/chicken/chickenpineapple.jpg',
+      '/menu/chicken/chickenbuttered.jpg',
     ],
-    'Fish Fillet (Pick One)': ['/images/fish/1.jpg', '/images/fish/2.jpg', '/images/fish/3.jpg'],
-    'Mixed Vegie (Pick One)': ['/images/vegie/1.jpg', '/images/vegie/2.jpg', '/images/vegie/3.jpg', '/images/vegie/4.jpg', ],
-    'Pasta or Noodles (Pick One)': ['/images/pasta/1.jpg', '/images/pasta/2.jpg', '/images/pasta/3.jpg', '/images/pasta/4.jpg', '/images/pasta/5.jpg', '/images/pasta/6.jpg', '/images/pasta/7.jpg'],
-    'Drinks (Pick One)': ['/images/drinks/1.jpg', '/images/drinks/2.jpg', '/images/drinks/3.jpg', '/images/drinks/4.jpg'],
-    'Dessert (Pick One)': ['/images/dessert/1.jpg', '/images/dessert/2.jpg', '/images/dessert/3.jpg'],
+    'Fish Fillet (Pick One)': [
+      '/menu/fish fillet/fishfillettartarsauce.jpg',
+      '/menu/fish fillet/fishfilletinmushroomsauce.jpg',
+      '/menu/fish fillet/fishfilletinsweetandsoursauce.jpg',
+    ],
+    'Mixed Vegie (Pick One)': [
+      '/menu/mixed vegie/butteredmixedvegie.jpg',
+      '/menu/mixed vegie/mixedvegiewithquailegg.jpg',
+      '/menu/mixed vegie/mixedvegiefreshsalad.jpg',
+      '/menu/mixed vegie/steamedmixedvegie.jpg',
+    ],
+    'Pasta or Noodles (Pick One)': [
+      '/menu/pasta or noodles/creamycarbonara.jpg',
+      '/menu/pasta or noodles/tunacreamycarbonara.jpg',
+      '/menu/pasta or noodles/cheesymacaroni.jpg',
+      '/menu/pasta or noodles/italianspaghetti.jpg',
+      '/menu/pasta or noodles/sweetspaghetti.jpg',
+      '/menu/pasta or noodles/bihonguisado.jpg',
+      '/menu/pasta or noodles/sotanghonguisado.jpg',
+    ],
+    'Drinks (Pick One)': [
+      '/menu/drinks/icetealemonade.jpg',
+      '/menu/drinks/redtea.jpg',
+      '/menu/drinks/cucumberlemonade.jpg',
+      '/menu/drinks/bluelemonade.jpg',
+    ],
+    'Dessert (Pick One)': [
+      '/menu/dessert/bucopandan.jpg',
+      '/menu/dessert/coffeejelly.jpg',
+      '/menu/dessert/mangojellyfloat.jpg',
+    ],
   };
 
   const getImageLabel = (categoryTitle: string, imageIndex: number) => {
@@ -193,18 +219,16 @@ const Menu = () => {
   return (
   <div className="min-h-screen pt-16">
       {/* Back Button */}
-      <button
-        onClick={() => {
-          navigate(-1);
-          setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }, 50);
-        }}
-        className="fixed top-20 left-4 z-30 border border-amber-500 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow transition duration-300"
+      <motion.button
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        onClick={() => navigate(-1)}
+        className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
         aria-label="Go Back"
-        >
+      >
         <ArrowLeft className="w-5 h-5" />
-      </button>
+      </motion.button>
 
       {/* Header */}
       <header className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-20 text-center relative">
@@ -316,17 +340,18 @@ const Menu = () => {
             />
             {/* Image Label */}
             <div
-              className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 text-gray-900 px-4 py-2 rounded-full shadow-lg w-[90vw] max-w-xs text-xs sm:px-6 sm:py-3 sm:max-w-md sm:text-sm"
-            >
-              <div className="text-center">
-                <p className="font-medium truncate">
-                  {getImageLabel(selectedCategory, i)}
-                </p>
-                <p className="text-[10px] text-gray-600 mt-1 sm:text-xs">
-                  {i + 1} of {selectedImages.length}
-                </p>
-              </div>
-            </div>
+  className="absolute bottom-5 sm:bottom-8 left-1/2 transform -translate-x-1/2 
+             bg-white/80 text-gray-900 
+             px-4 py-2 
+             rounded-full shadow-xl backdrop-blur-md 
+             w-[88vw] max-w-[200px] sm:max-w-md 
+             text-center text-[10px] sm:text-sm"
+>
+  <p className="font-medium truncate">{getImageLabel(selectedCategory, i)}</p>
+  <p className="text-[10px] text-gray-500 mt-1 sm:text-xs">
+    {i + 1} of {selectedImages.length}
+  </p>
+</div>
           </div>
         </CarouselItem>
       ))}
