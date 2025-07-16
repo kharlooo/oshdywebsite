@@ -53,20 +53,27 @@ const Navigation = () => {
     className="h-12 w-12 mr-3"
   />
   <h1
-  className="text-2xl font-bold font-serif tracking-wide"
+  className="flex flex-col sm:block font-serif tracking-wide text-left sm:text-left items-center sm:items-start"
   style={{
-    background: 'linear-gradient(to bottom, #fbbf24, #f59e0b)', // similar to amber-400 → amber-600
+    background: 'linear-gradient(to bottom, #fbbf24, #f59e0b)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     textShadow: `
-      -1px -1px 0 rgba(255, 255, 255, 0.3),  /* soft top highlight */
-      1px 1px 2px rgba(0, 0, 0, 0.2)         /* gentle shadow depth */
+      -1px -1px 0 rgba(255, 255, 255, 0.3),
+      1px 1px 2px rgba(0, 0, 0, 0.2)
     `
   }}
 >
-  <span className="hidden sm:inline">OSHDY Event Catering Services</span>
-  <span className="sm:hidden">OSHDY</span>
+  <span className="text-3xl font-extrabold sm:hidden">OSHDY Event</span>
+  <span className="text-[11px] sm:hidden italic tracking-tight -mt-0.5 text-center">
+    Catering Services
+  </span>
+
+  <span className="hidden sm:inline text-2xl font-bold">
+    OSHDY Event Catering Services
+  </span>
 </h1>
+
 
 </div>
 
