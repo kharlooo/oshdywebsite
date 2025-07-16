@@ -2,10 +2,10 @@ import { Users, Award, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { number: '500+', label: 'Events Catered', icon: Award },
-    { number: '15+', label: 'Years Experience', icon: Clock },
-    { number: '50+', label: 'Team Members', icon: Users },
-    { number: '25+', label: 'Venue Partners', icon: MapPin }
+    { number: '800+', label: 'Events Catered', icon: Award },
+    { number: '6+', label: 'Years Experience', icon: Clock },
+    { number: '20+', label: 'Team Members', icon: Users },
+    { number: '10+', label: 'Venue Partners', icon: MapPin }
   ];
 
   const teamMembers = [
@@ -64,13 +64,13 @@ const About = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h3>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                What started as a small family catering business has grown into one of the region's most trusted event and catering service providers. Our journey began with a simple mission: to bring people together through exceptional food and unforgettable experiences.
+                What began as a simple backdrop setup service for birthdays and baptisms soon blossomed into a full fledged event and catering business. In 2017, we catered our very first wedding a milestone that marked the beginning of a journey filled with passion, hard work, and dedication.
               </p>
               <p>
-                Over the years, we've had the privilege of being part of countless celebrations - from intimate family gatherings to grand corporate events. Each event has taught us something new and reinforced our commitment to excellence.
+                From renting out essential party equipment to expanding into full event coordination and catering, we’ve grown with every celebration we've served. Each event, big or small, has become part of our story shaping who we are and how we serve.
               </p>
               <p>
-                Today, our experienced team combines traditional hospitality values with modern innovation, ensuring every event we cater reflects our passion for creating magical moments that last a lifetime.
+                Now, with nearly seven years of experience, we take pride in bringing each client's vision to life. Our commitment remains the same, to deliver exceptional service, delicious food, and unforgettable moments that you and your guests will cherish forever.
               </p>
             </div>
           </div>
