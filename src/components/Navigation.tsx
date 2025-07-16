@@ -64,9 +64,9 @@ const Navigation = () => {
     `
   }}
 >
-  <span className="text-3xl font-extrabold sm:hidden">OSHDY Event</span>
+  <span className="text-3xl font-extrabold sm:hidden">OSHDY</span>
   <span className="text-[11px] sm:hidden italic tracking-tight -mt-0.5 text-center">
-    Catering Services
+    Event Catering Services
   </span>
 
   <span className="hidden sm:inline text-2xl font-bold">
