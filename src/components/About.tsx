@@ -86,30 +86,6 @@ const About = () => {
 
         </div>
 
-        {/* Team Section */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Meet Our Team</h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                {/* Actual Profile Image */}
-                <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-white shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.imageAlt}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h4>
-                <p className="text-amber-600 font-semibold mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Contact Information */}
         <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Get In Touch</h3>

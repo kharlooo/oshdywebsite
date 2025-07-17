@@ -224,27 +224,33 @@ const PackageThemes = () => {
 
       {/* CTA */}
       <motion.div
-  className="py-16 bg-gray-50"
+  className="py-20 bg-white"
   variants={fadeUp}
   initial="hidden"
   animate="visible"
   transition={{ duration: 0.5, delay: 0.2 }}
 >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Need Help Choosing?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Our event coordinators are here to help you select the perfect theme for your special occasion.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-              Download App
-            </button>
-            <button className="border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200">
-              Schedule Consultation
-            </button>
-          </div>
-        </div>
-      </motion.div>
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="border border-gray-200 rounded-2xl p-10 shadow-sm bg-white text-center">
+      <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-4 tracking-tight">
+        Stay Connected with OSHDY
+      </h2>
+      <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+        Be the first to see our event themes, behind the scenes work, and updates.  
+        Follow us on Facebook to stay in the loop.
+      </p>
+      <a
+        href="https://www.facebook.com/julianjongliquigan"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white text-base font-medium px-8 py-3 rounded-xl shadow-sm transition duration-300"
+      >
+        Visit Our Facebook Page
+      </a>
+    </div>
+  </div>
+</motion.div>
+
     </div>
   );
 };

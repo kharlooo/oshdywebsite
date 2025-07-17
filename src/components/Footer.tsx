@@ -47,13 +47,30 @@ const Footer = () => {
           {/* Service Areas */}
 <div>
   <h4 className="text-lg font-semibold mb-2 text-amber-400">Service Areas in the Philippines</h4>
-  <div className="flex items-start">
+  <div className="flex items-start mb-4">
     <Globe className="w-5 h-5 text-amber-400 mr-3 mt-0.5 flex-shrink-0" />
     <div className="text-gray-300 text-sm leading-relaxed">
-  Quezon City &middot; Antipolo &middot; Aparri &middot; San Mateo &middot; Cainta &middot; Caloocan &middot; Pasig &middot; Rodriguez &middot; Manila &middot; Bugallon
-</div>
+      Quezon City &middot; Antipolo &middot; Aparri &middot; San Mateo &middot; Cainta &middot; Caloocan &middot; Pasig &middot; Rodriguez &middot; Manila &middot; Bugallon
+    </div>
+  </div>
+
+  {/* Follow Us */}
+  <div>
+    <h4 className="text-lg font-semibold mb-4 text-amber-400">Follow Us</h4>
+    <div className="flex items-center space-x-3">
+      <Globe className="w-5 h-5 text-amber-400" />
+      <a
+        href="https://www.facebook.com/julianjongliquigan"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-gray-300 hover:text-amber-400 transition-colors duration-200"
+      >
+        facebook.com/oshdyevents
+      </a>
+    </div>
   </div>
 </div>
+
         </div>
 
         {/* Bottom Section */}
