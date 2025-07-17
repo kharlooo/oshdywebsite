@@ -128,7 +128,7 @@ const HowItWorks = () => {
                     </div>
                   </div>
                 </div>
-                <div className="order-1 md:order-2 text-center">
+                <div className="order-2 md:order-1 text-center">
                   <div className="bg-card rounded-2xl p-8 shadow-lg border">
                     <Smartphone className="w-16 h-16 text-amber-600 mx-auto mb-6" />
                     <div className="w-48 h-48 bg-muted rounded-lg mx-auto mb-6 flex items-center justify-center">
@@ -149,44 +149,46 @@ const HowItWorks = () => {
             </motion.section>
 
             {/* Step 2 */}
-            <motion.section
-              variants={fadeUp}
-              className="relative"
-            >
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-center">
-                  <div className="bg-card rounded-2xl p-8 shadow-lg border">
-                    <LayoutDashboard className="w-16 h-16 text-amber-600 mx-auto mb-6" />
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-foreground">Service Categories</h3>
-                      <div className="grid grid-cols-2 gap-3 text-sm">
-                        <div className="bg-muted rounded-lg p-3">Catering</div>
-                        <div className="bg-muted rounded-lg p-3">Events</div>
-                        <div className="bg-muted rounded-lg p-3">Decorations</div>
-                        <div className="bg-muted rounded-lg p-3">Gallery</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
-                      2
-                    </div>
-                    <div>
-                      <h2 className="text-3xl font-bold text-foreground">Explore Our Services</h2>
-                      <p className="text-muted-foreground">Discover what we offer</p>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <p className="text-foreground leading-relaxed">
-                      Browse our comprehensive catalog of services, from elegant grazing tables to full scale event management. 
-                      Each service includes detailed descriptions, pricing, and customer reviews to help you make the perfect choice.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
+<motion.section variants={fadeUp} className="relative">
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    
+    {/* Text Section */}
+    <div className="order-1 md:order-2">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+          2
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold text-foreground">Explore Our Services</h2>
+          <p className="text-muted-foreground">Discover what we offer</p>
+        </div>
+      </div>
+      <div className="space-y-4">
+        <p className="text-foreground leading-relaxed">
+          Browse our comprehensive catalog of services, from elegant grazing tables to full scale event management. 
+          Each service includes detailed descriptions, pricing, and customer reviews to help you make the perfect choice.
+        </p>
+      </div>
+    </div>
+
+    {/* Figure/Image Section */}
+    <div className="order-2 md:order-1 text-center">
+      <div className="bg-card rounded-2xl p-8 shadow-lg border">
+        <LayoutDashboard className="w-16 h-16 text-amber-600 mx-auto mb-6" />
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-foreground">Service Categories</h3>
+          <div className="grid grid-cols-2 gap-3 text-sm">
+            <div className="bg-muted rounded-lg p-3">Catering</div>
+            <div className="bg-muted rounded-lg p-3">Events</div>
+            <div className="bg-muted rounded-lg p-3">Decorations</div>
+            <div className="bg-muted rounded-lg p-3">Gallery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</motion.section>
 
             {/* Step 3 */}
             <motion.section
@@ -194,7 +196,7 @@ const HowItWorks = () => {
               className="relative"
             >
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="order-2 md:order-1">
+                <div className="order-1 md:order-2">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                       3
@@ -219,7 +221,7 @@ const HowItWorks = () => {
                     </div>
                   </div>
                 </div>
-                <div className="order-1 md:order-2 text-center">
+                <div className="order-2 md:order-1 text-center">
                   <div className="bg-card rounded-2xl p-8 shadow-lg border">
                     <AppWindow className="w-16 h-16 text-amber-600 mx-auto mb-6" />
                     <div className="space-y-4">
