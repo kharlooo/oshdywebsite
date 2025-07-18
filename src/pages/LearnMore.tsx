@@ -196,7 +196,7 @@ const HowItWorks = () => {
               className="relative"
             >
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="order-1 md:order-2">
+                <div className="order-1 md:order-1">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                       3
@@ -221,7 +221,7 @@ const HowItWorks = () => {
                     </div>
                   </div>
                 </div>
-                <div className="order-2 md:order-1 text-center">
+                <div className="order-2 md:order-2 text-center">
                   <div className="bg-card rounded-2xl p-8 shadow-lg border">
                     <AppWindow className="w-16 h-16 text-amber-600 mx-auto mb-6" />
                     <div className="space-y-4">

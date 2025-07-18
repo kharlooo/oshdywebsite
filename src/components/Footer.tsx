@@ -1,4 +1,4 @@
-import { Heart, MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { Heart, MapPin, Phone, Mail, Globe, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -58,7 +58,7 @@ const Footer = () => {
   <div>
     <h4 className="text-lg font-semibold mb-4 text-amber-400">Follow Us</h4>
     <div className="flex items-center space-x-3">
-      <Globe className="w-5 h-5 text-amber-400" />
+      <Facebook className="w-5 h-5 text-amber-400" />
       <a
         href="https://www.facebook.com/julianjongliquigan"
         target="_blank"
