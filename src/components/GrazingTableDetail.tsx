@@ -110,7 +110,17 @@ const GrazingTableDetail = () => {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        onClick={() => navigate(-1)}
+        onClick={() => {
+          // Check if it's a touch device (mobile)
+          if ('ontouchstart' in window) {
+            setTimeout(() => {
+              navigate(-1);
+            }, 150);
+          } else {
+            // Regular behavior for non-touch devices
+            navigate(-1);
+          }
+        }}
         className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
         aria-label="Go Back"
       >
@@ -215,29 +225,53 @@ const GrazingTableDetail = () => {
       </div>
 
       {/* CTA */}
-      <div className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-2xl border border-amber-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Book This Package?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Contact us today to reserve your grazing table and make your event unforgettable.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200">
-                Download App Now
-              </button>
-              <Link
-                to="/menu"
-                className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold border-2 border-amber-600 hover:bg-amber-50 transition-colors duration-200"
-              >
-                View Menu Options
-              </Link>
-            </div>
-          </div>
-        </div>
+<div className="py-16 bg-white">
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-2xl border border-amber-200">
+      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        Ready to Book This Package?
+      </h3>
+      <p className="text-gray-600 mb-6">
+        Contact us today to reserve your grazing table and make your event unforgettable.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button 
+          onClick={() => {
+            // Check if it's a touch device (mobile)
+            if ('ontouchstart' in window) {
+              setTimeout(() => {
+                // Your download app logic here
+                console.log("Download app button clicked on mobile");
+              }, 200);
+            } else {
+              // Regular behavior for non-touch devices
+              console.log("Download app button clicked on desktop");
+            }
+          }}
+          className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200"
+        >
+          Download App Now
+        </button>
+        <button
+          onClick={() => {
+            // Check if it's a touch device (mobile)
+            if ('ontouchstart' in window) {
+              setTimeout(() => {
+                navigate("/menu");
+              }, 200);
+            } else {
+              // Regular behavior for non-touch devices
+              navigate("/menu");
+            }
+          }}
+          className="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold border-2 border-amber-600 hover:bg-amber-50 transition-colors duration-200"
+        >
+          View Menu Options
+        </button>
       </div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };

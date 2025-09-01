@@ -32,26 +32,61 @@ const Navigation = () => {
   }, []);
 
   const handleNavClick = (href: string) => {
-    setIsMenuOpen(false);
     const sectionId = href.replace('/#', '');
 
-    if (location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    // Check if it's a touch device (mobile)
+    if ('ontouchstart' in window) {
+      // Close the menu after 150ms delay on mobile
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        
+        // Then proceed with navigation after menu closes
+        setTimeout(() => {
+          if (location.pathname === '/') {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          } else {
+            sessionStorage.setItem('scrollToSection', sectionId);
+            navigate('/');
+          }
+        }, 50); // Small delay to ensure menu is fully closed
+      }, 150);
     } else {
-      sessionStorage.setItem('scrollToSection', sectionId);
-      navigate('/');
+      // Regular behavior for non-touch devices
+      setIsMenuOpen(false);
+      if (location.pathname === '/') {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        sessionStorage.setItem('scrollToSection', sectionId);
+        navigate('/');
+      }
     }
   };
 
   const handleLogoClick = () => {
-    if (location.pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Check if it's a touch device (mobile)
+    if ('ontouchstart' in window) {
+      setTimeout(() => {
+        if (location.pathname === '/') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          sessionStorage.setItem('scrollToSection', 'top');
+          navigate('/');
+        }
+      }, 200);
     } else {
-      sessionStorage.setItem('scrollToSection', 'top');
-      navigate('/');
+      // Regular behavior for non-touch devices
+      if (location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        sessionStorage.setItem('scrollToSection', 'top');
+        navigate('/');
+      }
     }
   };
 
@@ -111,7 +146,16 @@ const Navigation = () => {
           {/* Mobile menu icon */}
           <div className="lg:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                // Check if it's a touch device (mobile)
+                if ('ontouchstart' in window) {
+                  setTimeout(() => {
+                    setIsMenuOpen(!isMenuOpen);
+                  }, 200);
+                } else {
+                  setIsMenuOpen(!isMenuOpen);
+                }
+              }}
               className="text-gray-700 hover:text-amber-600 focus:outline-none transition-colors duration-200"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Sparkles, Heart, Gem, Compass, Wand2 } from 'lucide-react';
 
 const PackageThemes = () => {
@@ -10,6 +10,33 @@ const PackageThemes = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Track window width so we can decide mobile vs desktop behavior
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== 'undefined' ? window.innerWidth : 1200
+  );
+
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkScreen = () => setIsMobile(window.innerWidth < 640); // Tailwind sm breakpoint
+  checkScreen();
+  window.addEventListener("resize", checkScreen);
+  return () => window.removeEventListener("resize", checkScreen);
+}, []);
+
+  useEffect(() => {
+    const onResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  // store expanded states keyed by `theme.name` for mobile
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleExpand = (key: string) => {
+    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const packageData = {
     'birthday-baptismal': {
@@ -111,9 +138,9 @@ const PackageThemes = () => {
   };
 
   const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   const packageInfo = packageData[packageId as keyof typeof packageData];
 
@@ -133,20 +160,34 @@ const PackageThemes = () => {
     );
   }
 
+  // helper for card click: on desktop navigate, on mobile toggle expand
+  const handleCardClick = (themeKey: string) => {
+    const isDesktop = windowWidth >= 1024; // Tailwind lg breakpoint
+    if (isDesktop) {
+      navigate(`/theme/${packageId}-${themeKey.toLowerCase()}`);
+    } else {
+      toggleExpand(themeKey);
+    }
+  };
+
   return (
     <div className="min-h-screen pt-16 relative">
-      {/* Floating Back Button */}
       <motion.button
   initial={{ x: -100, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ duration: 0.3 }}
-  onClick={() => navigate(-1)}
+  onClick={() => {
+    if (isMobile) {
+      setTimeout(() => navigate(-1), 150); // mobile delay
+    } else {
+      navigate(-1);
+    }
+  }}
   className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
   aria-label="Go Back"
 >
   <ArrowLeft className="w-5 h-5" />
 </motion.button>
-
 
       {/* Header */}
       <div className="bg-gradient-to-b from-amber-50 to-white pt-28 pb-16">
@@ -164,93 +205,148 @@ const PackageThemes = () => {
       <div className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-  className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-  variants={fadeUp}
-  initial="hidden"
-  animate="visible"
-  transition={{ duration: 0.5 }}
->
-            {packageInfo.themes.map((theme) => (
-              <div
-                key={theme.name}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100 hover:border-amber-300 transition-all duration-300 hover:shadow-2xl cursor-pointer"
-                onClick={() => navigate(`/theme/${packageId}-${theme.name.toLowerCase()}`)}
-              >
-                {/* Image */}
-                <div className="h-64 bg-cover bg-center relative" style={{ backgroundImage: `url(${theme.image})` }}>
-                  <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-                  <div className="absolute top-4 left-4 bg-white/90 p-3 rounded-full">
-                    <theme.icon className="w-6 h-6 text-amber-600" />
-                  </div>
-                </div>
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5 }}
+          >
+            {packageInfo.themes.map((theme) => {
+              const key = theme.name;
+              const isExpanded = !!expanded[key];
+              const showDetails = windowWidth >= 1024 || isExpanded; // desktop always shows
 
-                {/* Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{theme.name}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{theme.description}</p>
+              return (
+                <div
+                  key={key}
+                  // note: we keep cursor-pointer so mobile knows it's tappable
+                  className="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100 hover:border-amber-300 transition-all duration-300 hover:shadow-2xl"
+                >
+                  {/* Clickable header area: image + top icon.
+                      On desktop this whole card navigates; on mobile we toggle expansion when tapped. */}
+                  <div
+                    className="h-64 bg-cover bg-center relative cursor-pointer"
+                    style={{ backgroundImage: `url(${theme.image})` }}
+                    onClick={() => handleCardClick(key)}
+                    role="button"
+                    aria-label={`Open ${theme.name} theme`}
+                  >
+                    <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                    <div className="absolute top-4 left-4 bg-white/90 p-3 rounded-full z-10">
+                      <theme.icon className="w-6 h-6 text-amber-600" />
+                    </div>
 
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">Theme Features:</h4>
-                    <ul className="space-y-2">
-                      {theme.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600">
-                          <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-8">
-                    <h4 className="font-semibold text-gray-900 mb-3">Color Palette:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {theme.colors.map((color) => (
-                        <span key={color} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                          {color}
-                        </span>
-                      ))}
+                    {/* Mobile-only small "View More" hint at bottom-right */}
+                    <div className="absolute bottom-3 right-3 z-10 lg:hidden">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleExpand(key);
+                        }}
+                        className="px-3 py-1 bg-black/70 text-white text-xs rounded-lg backdrop-blur-sm"
+                        aria-expanded={isExpanded}
+                      >
+                        {isExpanded ? 'View Less' : 'View More'}
+                      </button>
                     </div>
                   </div>
 
-                  <div className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 text-center">
-                    Select {theme.name} Theme
+                  {/* Content */}
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{theme.name}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{theme.description}</p>
+
+                    {/* Collapsible: features + colors + select button */}
+                    <AnimatePresence initial={false}>
+                      {showDetails && (
+                        <motion.div
+                          key={`${key}-details`}
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.28 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mb-6">
+                            <h4 className="font-semibold text-gray-900 mb-3">Theme Features:</h4>
+                            <ul className="space-y-2">
+                              {theme.features.map((feature, idx) => (
+                                <li key={idx} className="flex items-center text-sm text-gray-600">
+                                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="mb-8">
+                            <h4 className="font-semibold text-gray-900 mb-3">Color Palette:</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {theme.colors.map((color) => (
+                                <span key={color} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                                  {color}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div
+                            className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 text-center cursor-pointer"
+                            onClick={() => {
+  if (isMobile) {
+    setTimeout(() => navigate(`/theme/${packageId}-${theme.name.toLowerCase()}`), 200);
+  } else {
+    navigate(`/theme/${packageId}-${theme.name.toLowerCase()}`);
+  }
+}}
+                          >
+                            Select {theme.name} Theme
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </div>
 
       {/* CTA */}
       <motion.div
-  className="py-20 bg-white"
-  variants={fadeUp}
-  initial="hidden"
-  animate="visible"
-  transition={{ duration: 0.5, delay: 0.2 }}
->
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="border border-gray-200 rounded-2xl p-10 shadow-sm bg-white text-center">
-      <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-4 tracking-tight">
-        Stay Connected with OSHDY
-      </h2>
-      <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-        Be the first to see our event themes, behind the scenes work, and updates.  
-        Follow us on Facebook to stay in the loop.
-      </p>
-      <a
-        href="https://www.facebook.com/julianjongliquigan"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white text-base font-medium px-8 py-3 rounded-xl shadow-sm transition duration-300"
+        className="py-20 bg-white"
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Visit Our Facebook Page
-      </a>
-    </div>
-  </div>
-</motion.div>
-
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="border border-gray-200 rounded-2xl p-10 shadow-sm bg-white text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-4 tracking-tight">
+              Stay Connected with OSHDY
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              Be the first to see our event themes, behind the scenes work, and updates.
+              Follow us on Facebook to stay in the loop.
+            </p>
+            <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    if (isMobile) {
+      setTimeout(() => window.open('https://www.facebook.com/julianjongliquigan', '_blank'), 200);
+    } else {
+      window.open('https://www.facebook.com/julianjongliquigan', '_blank');
+    }
+  }}
+  className="inline-block border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white text-base font-medium px-8 py-3 rounded-xl shadow-sm transition duration-300"
+>
+  Visit Our Facebook Page
+</a>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

@@ -43,10 +43,21 @@ const HowItWorks = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
         onClick={() => {
-          navigate(-1);
-          setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }, 50);
+          // Check if it's a touch device (mobile)
+          if ('ontouchstart' in window) {
+            setTimeout(() => {
+              navigate(-1);
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 50);
+            }, 150);
+          } else {
+            // Regular behavior for non-touch devices
+            navigate(-1);
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 50);
+          }
         }}
         className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
         aria-label="Go Back"

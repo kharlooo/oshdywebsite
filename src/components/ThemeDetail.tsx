@@ -294,21 +294,31 @@ const ThemeDetail = () => {
   return (
   <div className="min-h-screen pt-16 relative">
     <motion.button
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      onClick={() => {
-  navigate(-1);
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 50); // small delay to wait for navigation
-}}
-      className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
-      aria-label="Go Back"
-    >
-      <ArrowLeft className="w-5 h-5" />
-    </motion.button>
-
+  initial={{ x: -100, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.3 }}
+  onClick={() => {
+    // Check if it's a touch device (mobile)
+    if ('ontouchstart' in window) {
+      setTimeout(() => {
+        navigate(-1);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      }, 150);
+    } else {
+      // Regular behavior for non-touch devices
+      navigate(-1);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 50);
+    }
+  }}
+  className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
+  aria-label="Go Back"
+>
+  <ArrowLeft className="w-5 h-5" />
+</motion.button>
 
       {/* Hero Section */}
       <div className="relative h-96 bg-cover bg-center" style={{ backgroundImage: `url(${theme.heroImage})` }}>
@@ -1036,7 +1046,7 @@ const ThemeDetail = () => {
 )}
 
       {/* Download App CTA */}
-      <div className="py-16 bg-amber-600">
+<div className="py-16 bg-amber-600">
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 className="text-3xl font-bold text-white mb-4">
       Ready to Book Your {theme.title} Celebration?
@@ -1046,13 +1056,42 @@ const ThemeDetail = () => {
     </p>
 
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <button className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center">
+      <button 
+        className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
+        onClick={(e) => {
+          // Check if it's a touch device (mobile)
+          if ('ontouchstart' in window) {
+            e.preventDefault();
+            setTimeout(() => {
+              // Your download app logic here
+              console.log("Download app button clicked on mobile");
+            }, 200);
+          } else {
+            // Regular behavior for non-touch devices
+            console.log("Download app button clicked on desktop");
+          }
+        }}
+      >
         <Download className="w-5 h-5 mr-2" />
         Download Our App
       </button>
 
       <Link to="/how-it-works">
-        <button className="border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200">
+        <button 
+          className="border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200"
+          onClick={(e) => {
+            // Check if it's a touch device (mobile)
+            if ('ontouchstart' in window) {
+              e.preventDefault();
+              setTimeout(() => {
+                // Navigation will be handled by the Link component
+                // We need to manually navigate on mobile
+                navigate("/how-it-works");
+              }, 200);
+            }
+            // For non-touch devices, the Link component will handle navigation
+          }}
+        >
           Learn More
         </button>
       </Link>

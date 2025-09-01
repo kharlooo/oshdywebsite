@@ -17,6 +17,28 @@ const PrivacyPolicy = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  // Function to handle back navigation with mobile delay
+  const handleBackClick = () => {
+    // Check if device is mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Add 150ms delay for mobile
+      setTimeout(() => {
+        navigate(-1);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      }, 150);
+    } else {
+      // Immediate navigation for desktop
+      navigate(-1);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 50);
+    }
+  };
+
   return (
     <div className="min-h-screen pt-16 bg-white">
       <Navigation />
@@ -26,12 +48,7 @@ const PrivacyPolicy = () => {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        onClick={() => {
-  navigate(-1);
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 50); // small delay to wait for navigation
-}}
+        onClick={handleBackClick}
         className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
         aria-label="Go Back"
       >
@@ -86,10 +103,10 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.3 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">4</span>
-              <span>Third-Party Links</span>
+              <span>Third Party Links</span>
               <ExternalLink className="w-5 h-5 text-amber-600" />
             </div>
-            <p>Our website contains links to download our mobile application. Once you leave our site, your data will be governed by the policies of the third-party platforms (e.g., Google Play Store, Apple App Store).</p>
+            <p>Our website contains links to download our mobile application. Once you leave our site, your data will be governed by the policies of the third party platforms (e.g., Google Play Store, Apple App Store).</p>
           </motion.section>
 
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.4 }} className="p-6 bg-white rounded-xl border shadow-sm">
@@ -100,8 +117,8 @@ const PrivacyPolicy = () => {
             </div>
             <p>If you have any questions about this policy, you may contact us at:</p>
             <p className="mt-2">
-              📧 <strong>oshdy@gmail.com</strong><br />
-              📍 123 Celebration Avenue, Event City, EC 12345
+              📧 <strong>oshdyevents@gmail.com</strong><br />
+              📍 P5 B46 L3 Centella Homes, Rodriguez, Philippines, 1860
             </p>
           </motion.section>
 
@@ -114,7 +131,7 @@ const PrivacyPolicy = () => {
             <p>We may revise this policy from time to time. The latest version will always be available on our website with the updated date.</p>
           </motion.section>
 
-          <p className="text-sm text-gray-500 text-center mt-10">Last updated: July 12, 2025</p>
+          <p className="text-sm text-gray-500 text-center mt-10">Last updated: September 1, 2025</p>
         </div>
       </div>
 

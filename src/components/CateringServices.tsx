@@ -1,8 +1,20 @@
-
-import { Utensils, Users, Clock, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Utensils, Users, Award } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const CateringServices = () => {
+  const navigate = useNavigate();
+  const [clickedId, setClickedId] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile view
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const services = [
     {
       id: 'birthday-baptismal',
@@ -60,6 +72,15 @@ const CateringServices = () => {
     'Specialty dietary menus'
   ];
 
+  const handleClick = (id: string) => {
+    if (isMobile) {
+      setClickedId(id); // trigger scale animation
+      setTimeout(() => navigate(`/packages/${id}`), 300); // delay for animation
+    } else {
+      navigate(`/packages/${id}`); // instant for desktop
+    }
+  };
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,22 +97,39 @@ const CateringServices = () => {
         {/* Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service) => (
-            <Link
+            <div
               key={service.id}
-              to={`/packages/${service.id}`}
-              className={`relative bg-white rounded-xl shadow-lg border-2 overflow-hidden transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 block ${
-                service.popular ? 'border-amber-500' : 'border-gray-200 hover:border-amber-300'
-              }`}
+              onClick={() => handleClick(service.id)}
+              className={`relative bg-white rounded-xl shadow-lg border-2 overflow-hidden transition-all duration-300 cursor-pointer
+                ${service.popular ? 'border-amber-500' : 'border-gray-200'}
+                ${!isMobile && (service.popular ? 'hover:shadow-xl hover:scale-105' : 'hover:border-amber-300 hover:shadow-xl hover:scale-105')}
+                ${clickedId === service.id && isMobile ? 'scale-105 animate-pulse-mobile' : ''}`}
             >
               {/* Popular Badge */}
               {service.popular && (
-                <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
+                <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-20">
                   Most Popular
                 </div>
               )}
 
-              {/* Service Image */}
-              <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${service.image})` }}>
+              {/* Service Image with Overlay Themes */}
+              <div
+                className="h-48 bg-cover bg-center relative"
+                style={{ backgroundImage: `url(${service.image})` }}
+              >
+                {/* Theme overlay - visible on mobile */}
+                <div className="absolute bottom-2 right-2 flex gap-2 flex-wrap animate-fadeIn md:hidden">
+                  {service.themes.map((theme) => (
+                    <span
+                      key={theme}
+                      className="px-2 py-1 bg-black/70 text-white text-xs rounded-lg backdrop-blur-sm transition-opacity duration-300"
+                    >
+                      {theme}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Icon in bottom-right (desktop only) */}
                 <div className="h-full bg-black bg-opacity-20 flex items-end p-4">
                   <div className={`p-2 rounded-lg ${service.popular ? 'bg-amber-500' : 'bg-white'} bg-opacity-90`}>
                     <service.icon className={`w-6 h-6 ${service.popular ? 'text-white' : 'text-gray-700'}`} />
@@ -100,32 +138,35 @@ const CateringServices = () => {
               </div>
 
               <div className="p-6">
-                {/* Title and Price */}
-                <div className="mb-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{service.title}</h3>
-                </div>
+                {/* Title */}
+                <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">{service.title}</h3>
 
-                {/* Description */}
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                {/* Description (desktop only) */}
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed hidden md:block">
                   {service.description}
                 </p>
 
-                {/* Features */}
-                <ul className="space-y-2 mb-6">
+                {/* Features (desktop only) */}
+                <ul className="space-y-2 mb-6 hidden md:block">
                   {service.features.map((feature, index) => (
                     <li key={index} className="text-sm text-gray-600 flex items-center">
-                      <span className={`w-1.5 h-1.5 rounded-full mr-2 ${service.popular ? 'bg-amber-500' : 'bg-gray-400'}`}></span>
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full mr-2 ${service.popular ? 'bg-amber-500' : 'bg-gray-400'}`}
+                      ></span>
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                {/* Themes Preview */}
-                <div className="mb-4">
+                {/* Themes preview (desktop only) */}
+                <div className="mb-4 hidden md:block">
                   <p className="text-xs text-gray-500 mb-2">Available themes:</p>
                   <div className="flex gap-2">
                     {service.themes.map((theme) => (
-                      <span key={theme} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                      <span
+                        key={theme}
+                        className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
+                      >
                         {theme}
                       </span>
                     ))}
@@ -133,15 +174,17 @@ const CateringServices = () => {
                 </div>
 
                 {/* CTA Button */}
-                <div className={`w-full py-2 px-4 rounded-lg font-semibold text-sm text-center transition-colors duration-200 ${
-                  service.popular
-                    ? 'bg-amber-500 hover:bg-amber-600 text-white'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-                }`}>
-                  Choose Theme
+                <div
+                  className={`w-full py-2 px-4 rounded-lg font-semibold text-sm text-center transition-colors duration-200 ${
+                    service.popular
+                      ? 'bg-amber-500 hover:bg-amber-600 text-white'
+                      : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+                  }`}
+                >
+                  View
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -155,7 +198,7 @@ const CateringServices = () => {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Beyond exceptional food, we provide comprehensive event services to ensure your occasion runs smoothly from start to finish.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 {additionalServices.map((service, index) => (
                   <div key={index} className="flex items-center">
@@ -168,16 +211,29 @@ const CateringServices = () => {
 
             {/* Image Placeholder */}
             <div className="h-64 rounded-lg overflow-hidden shadow-md">
-  <img
-    src="/prepfood.jpg"
-    alt="Professional Kitchen - Chefs preparing food"
-    className="w-full h-full object-cover"
-  />
-</div>
-
+              <img
+                src="/prepfood.jpg"
+                alt="Professional Kitchen - Chefs preparing food"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Add pulse animation for mobile */}
+      <style>
+        {`
+          @keyframes pulse-mobile {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+          }
+          .animate-pulse-mobile {
+            animation: pulse-mobile 0.2s ease-out forwards;
+          }
+        `}
+      </style>
     </section>
   );
 };

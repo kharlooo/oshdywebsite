@@ -76,13 +76,14 @@ const About = () => {
           </div>
 
           {/* Image Placeholder */}
-          <div className="h-96 rounded-lg overflow-hidden shadow-md">
+<div className="h-96 rounded-lg overflow-hidden px-4 py-4 sm:px-0 sm:py-0">
   <img
-    src="example.jpg"
+    src="aboutphoto.jpg"
     alt="(catering team)"
-    className="w-full h-full object-cover"
+    className="w-full h-full object-cover rounded-lg"
   />
 </div>
+
 
         </div>
 

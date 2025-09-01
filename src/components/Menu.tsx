@@ -30,6 +30,23 @@ const Menu = () => {
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('');
 
+const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkScreen = () => setIsMobile(window.innerWidth < 640); // Tailwind sm breakpoint
+  checkScreen();
+  window.addEventListener("resize", checkScreen);
+  return () => window.removeEventListener("resize", checkScreen);
+}, []);
+
+const handleBackClick = () => {
+  if (isMobile) {
+    setTimeout(() => navigate(-1), 150);
+  } else {
+    navigate(-1);
+  }
+};
+
   const openGallery = (categoryTitle: string) => {
     const images = galleryImages[categoryTitle] || [];
     setSelectedImages(images);
@@ -223,7 +240,7 @@ const Menu = () => {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        onClick={() => navigate(-1)}
+        onClick={handleBackClick}
         className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
         aria-label="Go Back"
       >
@@ -276,7 +293,8 @@ const Menu = () => {
   <img
     src={category.image}
     alt={category.title}
-    className="absolute inset-0 w-full h-full object-cover group-hover:blur-sm transition-all duration-300"
+    className={`absolute inset-0 w-full h-full object-cover transition-all duration-300
+      ${isMobile ? "" : "group-hover:blur-sm"}`} // ✅ only blur on desktop
   />
 
   {/* Icon in bottom-left */}
@@ -284,13 +302,25 @@ const Menu = () => {
     {category.icon}
   </div>
 
-  {/* Hover overlay */}
-  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-    <span className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-full font-semibold">
-      View More
-    </span>
-  </div>
+  {/* Hover overlay (desktop only) */}
+  {!isMobile && (
+    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <span className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-full font-semibold">
+        View More
+      </span>
+    </div>
+  )}
+
+    {/* Mobile "See More" in bottom-right */}
+  {isMobile && (
+    <div className="absolute bottom-2 right-2">
+      <span className="bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+        See More →
+      </span>
+    </div>
+  )}
 </div>
+
               <CardContent className="p-6 bg-white space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900 text-center">{category.title}</h3>
                 <ul className="space-y-2">

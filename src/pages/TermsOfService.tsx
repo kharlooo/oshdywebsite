@@ -17,6 +17,28 @@ const TermsOfService = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  // Function to handle back navigation with mobile delay
+  const handleBackClick = () => {
+    // Check if device is mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // Add 150ms delay for mobile
+      setTimeout(() => {
+        navigate(-1);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 50);
+      }, 150);
+    } else {
+      // Immediate navigation for desktop
+      navigate(-1);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 50);
+    }
+  };
+
   return (
     <div className="min-h-screen pt-16 bg-white">
       <Navigation />
@@ -26,13 +48,7 @@ const TermsOfService = () => {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
-        onClick={() => {
-  navigate(-1);
-  setTimeout(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 50); // small delay to wait for navigation
-}}
-
+        onClick={handleBackClick}
         className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
         aria-label="Go Back"
       >
@@ -67,7 +83,7 @@ const TermsOfService = () => {
               <span>Intellectual Property</span>
               <Info className="w-5 h-5 text-amber-600" />
             </div>
-            <p>All content on this website — including text, images, graphics, and branding — is the property of OSHDY Events and is protected by copyright laws. You may not reproduce or reuse our materials without written permission.</p>
+            <p>All content on this website including text, images, graphics, and branding is the property of OSHDY Events and is protected by copyright laws. You may not reproduce or reuse our materials without written permission.</p>
           </motion.section>
 
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.2 }} className="p-6 bg-white rounded-xl border shadow-sm">
@@ -79,7 +95,7 @@ const TermsOfService = () => {
             <ul className="list-disc pl-5">
               <li>Use the website only for lawful purposes</li>
               <li>Do not attempt to breach or bypass security features</li>
-              <li>Do not interfere with others’ ability to access the site</li>
+              <li>Do not interfere with others' ability to access the site</li>
             </ul>
           </motion.section>
 
@@ -89,7 +105,7 @@ const TermsOfService = () => {
               <span>No Warranties</span>
               <AlertTriangle className="w-5 h-5 text-amber-600" />
             </div>
-            <p>While we strive to ensure the information on our site is accurate and up to date, we do not provide guarantees or warranties of any kind. Information is provided “as is” and is subject to change without notice.</p>
+            <p>While we strive to ensure the information on our site is accurate and up to date, we do not provide guarantees or warranties of any kind. Information is provided "as is" and is subject to change without notice.</p>
           </motion.section>
 
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.4 }} className="p-6 bg-white rounded-xl border shadow-sm">
@@ -107,7 +123,7 @@ const TermsOfService = () => {
               <span>Links to External Platforms</span>
               <LinkIcon className="w-5 h-5 text-amber-600" />
             </div>
-            <p>The website may contain links to third-party sites such as app stores. We are not responsible for their content or privacy practices.</p>
+            <p>The website may contain links to third party sites such as app stores. We are not responsible for their content or privacy practices.</p>
           </motion.section>
 
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.6 }} className="p-6 bg-white rounded-xl border shadow-sm">
@@ -119,7 +135,7 @@ const TermsOfService = () => {
             <p>We may update these terms as needed. Changes will be posted on this page and will become effective immediately upon publication.</p>
           </motion.section>
 
-          <p className="text-sm text-gray-500 text-center mt-10">Last updated: July 12, 2025</p>
+          <p className="text-sm text-gray-500 text-center mt-10">Last updated: September 1, 2025</p>
         </div>
       </div>
 
