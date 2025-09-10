@@ -63,6 +63,13 @@ const CateringServices = () => {
     }
   ];
 
+  // Sort services so that popular ones come first
+  const sortedServices = [...services].sort((a, b) => {
+    if (a.popular && !b.popular) return -1;
+    if (!a.popular && b.popular) return 1;
+    return 0;
+  });
+
   const additionalServices = [
     'Professional wait staff',
     'Event coordination',
@@ -94,9 +101,9 @@ const CateringServices = () => {
           </p>
         </div>
 
-        {/* Service Cards */}
+        {/* Service Cards - Using sortedServices instead of services */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {services.map((service) => (
+          {sortedServices.map((service) => (
             <div
               key={service.id}
               onClick={() => handleClick(service.id)}

@@ -10,6 +10,8 @@ const GrazingTable = () => {
       title: 'Assorted Delicacies / Kakanin',
       icon: <Coffee className="w-8 h-8 text-amber-600" />,
       bgGradient: 'from-amber-100 to-orange-100',
+      textColor: 'text-amber-800',
+      bgColor: 'bg-amber-200/50', 
       description: 'Traditional Filipino delicacies and sweet treats',
       pricing: [{ pax: 100 }, { pax: 50 }]
     },
@@ -18,6 +20,8 @@ const GrazingTable = () => {
       title: 'Assorted Mixed Deli, Fruits, Bread & Biscuits',
       icon: <Apple className="w-8 h-8 text-green-600" />,
       bgGradient: 'from-green-100 to-emerald-100',
+      textColor: 'text-green-800',
+      bgColor: 'bg-green-200/50', 
       description: 'Premium selection of fruits, deli, and baked goods',
       pricing: [{ pax: 100 }, { pax: 50 }]
     },
@@ -26,6 +30,8 @@ const GrazingTable = () => {
       title: 'Sweet / Candy Corner',
       icon: <Candy className="w-8 h-8 text-pink-600" />,
       bgGradient: 'from-pink-100 to-purple-100',
+      textColor: 'text-pink-800',
+      bgColor: 'bg-pink-200/50', 
       description: 'Delightful sweets and candy station for all ages',
       pricing: [{ pax: 100 }, { pax: 50 }]
     }
@@ -68,7 +74,7 @@ const GrazingTable = () => {
             <div
               key={pkg.id}
               onClick={() => handleClick(pkg.id)}
-              className={`cursor-pointer h-full border-2 border-gray-200 shadow-lg overflow-hidden rounded-xl transition-all duration-300
+              className={`cursor-pointer h-full border-2 border-gray-200 shadow-lg overflow-hidden rounded-xl transition-all duration-300 flex flex-col
                 ${!isMobile ? 'hover:border-amber-300 hover:shadow-2xl hover:-translate-y-2' : ''}
                 ${clickedId === pkg.id && isMobile ? 'scale-105 animate-pulse-mobile' : ''}`}
             >
@@ -82,23 +88,27 @@ const GrazingTable = () => {
                 <CardTitle className="text-xl font-bold text-gray-800 text-center mb-2">{pkg.title}</CardTitle>
                 <p className="text-gray-600 text-center text-sm">{pkg.description}</p>
               </CardHeader>
-              <CardContent className="p-6 bg-white">
-                <div className="space-y-4">
+              
+              {/* Make CardContent a flex container that pushes content to bottom */}
+              <CardContent className="p-6 bg-white flex flex-col flex-grow">
+                <div className="space-y-4 flex-grow">
                   <div className="text-center">
                     <h4 className="font-semibold text-gray-800 mb-3">Packages includes the following:</h4>
                     <div className="space-y-2">
                       {pkg.pricing.map((price, index) => (
-                        <div key={index} className="flex items-center justify-center bg-amber-50 text-amber-800 font-bold shadow-sm rounded-xl py-3 px-4 text-center">
+                        <div key={index} className={`flex items-center justify-center ${pkg.bgColor} ${pkg.textColor} font-bold shadow-sm rounded-xl py-3 px-4 text-center`}>
                           <span className="text-lg">{price.pax} Pax</span>
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-center text-amber-600 transition-colors duration-200">
-                      <span className="font-medium mr-2">View Details</span>
-                      <ArrowRight className="w-4 h-4 transition-transform duration-200" />
-                    </div>
+                </div>
+                
+                {/* View Details section - always at the bottom */}
+                <div className="pt-6 mt-auto border-t border-gray-100">
+                  <div className="flex items-center justify-center text-amber-600 transition-colors duration-200">
+                    <span className="font-medium mr-2">View Details</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200" />
                   </div>
                 </div>
               </CardContent>

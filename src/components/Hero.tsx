@@ -53,7 +53,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight elegant-font">
           Creating Unforgettable
           <span className="block text-amber-300">Moments Together</span>
         </h1>
@@ -101,6 +101,17 @@ const Hero = () => {
           ))}
         </div>
       </div>
+
+      {/* Add style tag for the elegant font */}
+      <style>
+        {`
+          .elegant-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+          }
+        `}
+      </style>
     </section>
   );
 };
