@@ -254,7 +254,7 @@ const handleBackClick = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md mb-4">
               <Utensils className="w-8 h-8 text-amber-600" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 elegant-font">
               Menu Selection
             </h1>
             <p className="text-gray-600 text-lg mt-4 max-w-xl mx-auto">
@@ -322,7 +322,7 @@ const handleBackClick = () => {
 </div>
 
               <CardContent className="p-6 bg-white space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900 text-center">{category.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 text-center elegant-font">{category.title}</h3>
                 <ul className="space-y-2">
   {category.items.map((item, i) => (
     <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
@@ -398,7 +398,7 @@ const handleBackClick = () => {
         <div className="max-w-xl mx-auto px-4">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-amber-100">
             <ChefHat className="w-10 h-10 text-amber-500 mx-auto mb-4" />
-            <p className="text-gray-800 text-lg font-semibold mb-2">
+            <p className="text-gray-800 text-lg font-semibold mb-2 elegant-font">
               Crafted with Love & Expertise
             </p>
             <p className="text-gray-600 text-sm">

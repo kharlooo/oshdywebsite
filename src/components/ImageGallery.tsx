@@ -62,7 +62,7 @@ const ImageGallery = ({ serviceType }: ImageGalleryProps) => {
   return (
     <div className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Gallery</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-8 elegant-font">Gallery</h2>
         
         <Carousel className="w-full max-w-5xl mx-auto">
           <CarouselContent className="-ml-2 md:-ml-4">

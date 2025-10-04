@@ -156,7 +156,7 @@ const GrazingTableDetail = () => {
   transition={{ duration: 0.5, delay: 0.15 }}
 >
   <div className="flex items-center justify-center lg:justify-start mb-6">
-    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight elegant-font">
       {currentPackage.title}
     </h1>
   </div>
@@ -175,7 +175,7 @@ const GrazingTableDetail = () => {
             {/* Pricing */}
             <Card className="shadow-xl border-2 border-amber-200">
               <CardHeader className="bg-gradient-to-r from-amber-50 to-orange-50">
-                <CardTitle className="text-2xl font-bold text-gray-900 text-center">
+                <CardTitle className="text-2xl font-bold text-gray-900 text-center elegant-font">
                   Packages
                 </CardTitle>
               </CardHeader>
@@ -205,7 +205,7 @@ const GrazingTableDetail = () => {
             {/* Inclusions */}
             <Card className="shadow-xl border-2 border-green-200">
               <CardHeader className="bg-gradient-to-r from-green-50 to-emerald-50">
-                <CardTitle className="text-2xl font-bold text-gray-900 text-center">
+                <CardTitle className="text-2xl font-bold text-gray-900 text-center elegant-font">
                   What's Included
                 </CardTitle>
               </CardHeader>
@@ -228,7 +228,7 @@ const GrazingTableDetail = () => {
 <div className="py-16 bg-white">
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-2xl border border-amber-200">
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+      <h3 className="text-2xl font-bold text-gray-900 mb-4 elegant-font">
         Ready to Book This Package?
       </h3>
       <p className="text-gray-600 mb-6">

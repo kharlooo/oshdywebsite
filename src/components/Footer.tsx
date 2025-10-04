@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 text-amber-400">OSHDY</h3>
+            <h3 className="text-2xl font-bold mb-4 text-amber-400 elegant-font">OSHDY</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Creating unforgettable moments through exceptional catering and event services. 
               From intimate gatherings to grand celebrations, we bring your vision to life with 
@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-400">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4 text-amber-400 elegant-font">Contact</h4>
             <div className="space-y-3">
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-amber-400 mr-3 mt-0.5 flex-shrink-0" />
@@ -68,7 +68,7 @@ const Footer = () => {
 
           {/* Service Areas */}
           <div>
-            <h4 className="text-lg font-semibold mb-2 text-amber-400">Service Areas in the Philippines</h4>
+            <h4 className="text-lg font-semibold mb-2 text-amber-400 elegant-font">Service Areas in the Philippines</h4>
             <div className="flex items-start mb-4">
               <Globe className="w-5 h-5 text-amber-400 mr-3 mt-0.5 flex-shrink-0" />
               <div className="text-gray-300 text-sm leading-relaxed">
@@ -78,7 +78,7 @@ const Footer = () => {
 
             {/* Follow Us */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-amber-400">Follow Us</h4>
+              <h4 className="text-lg font-semibold mb-4 text-amber-400 elegant-font">Follow Us</h4>
               <div className="flex items-center space-x-3">
                 <Facebook className="w-5 h-5 text-amber-400" />
                 <button
@@ -116,7 +116,7 @@ const Footer = () => {
           
           <div className="text-center mt-6 pt-6 border-t border-gray-700">
             <p className="text-gray-400 text-sm">
-              Ready to plan your perfect event? Download our mobile app for easy booking and planning tools.
+              Ready to plan your perfect event? Download our mobile app for easy booking.
             </p>
             <button className="mt-3 bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200">
               Get Our App

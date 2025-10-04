@@ -62,7 +62,7 @@ const GrazingTable = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Grazing Table</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 elegant-font">Grazing Table</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Elevate your event with our beautifully curated grazing tables, featuring an array of delicious options to please every palate
           </p>
@@ -85,7 +85,7 @@ const GrazingTable = () => {
                     {pkg.icon}
                   </div>
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-800 text-center mb-2">{pkg.title}</CardTitle>
+                <CardTitle className="text-xl font-bold text-gray-800 text-center mb-2 elegant-font">{pkg.title}</CardTitle>
                 <p className="text-gray-600 text-center text-sm">{pkg.description}</p>
               </CardHeader>
               
@@ -119,7 +119,7 @@ const GrazingTable = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-2xl border border-amber-200 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Perfect for Any Occasion</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 elegant-font">Perfect for Any Occasion</h3>
             <p className="text-gray-600 mb-6">
               Our grazing tables are ideal for corporate events, birthdays, weddings, and social gatherings. Each table is carefully arranged with fresh, quality ingredients.
             </p>

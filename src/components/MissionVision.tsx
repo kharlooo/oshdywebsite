@@ -3,11 +3,11 @@ import { Target, Eye, Heart, Star } from 'lucide-react';
 
 const MissionVision = () => {
   return (
-    <section id="mission" className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+    <section id="mission" className="py-20 bg-gradient-to-br from-amber-50 to-amber-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 elegant-font">
             Our Mission & Vision
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -22,7 +22,7 @@ const MissionVision = () => {
               <div className="p-4 bg-amber-100 rounded-full">
                 <Target className="w-8 h-8 text-amber-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4 elegant-font">Our Mission</h3>
             </div>
             <p className="text-gray-600 leading-relaxed mb-6">
               To provide delicious, high quality food and exceptional service at prices that make catering accessible for everyone. We are committed to bringing flavorful experiences to every event big or small by combining fresh ingredients, professional presentation, and budget friendly options.
@@ -45,7 +45,7 @@ const MissionVision = () => {
               <div className="p-4 bg-blue-100 rounded-full">
                 <Eye className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4 elegant-font">Our Vision</h3>
             </div>
             <p className="text-gray-600 leading-relaxed mb-6">
               To be the go to catering choice for communities seeking unforgettable culinary experiences without breaking the bank. We envision a world where quality catering is no longer a luxury, but a standard available to all.
@@ -65,7 +65,7 @@ const MissionVision = () => {
 
         {/* Values */}
         <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Core Values</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8 elegant-font">Our Core Values</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">

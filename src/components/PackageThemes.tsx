@@ -192,7 +192,7 @@ useEffect(() => {
       {/* Header */}
       <div className="bg-gradient-to-b from-amber-50 to-white pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 elegant-font">
             {packageInfo.title}
           </h1>
           <p className="text-xl text-gray-600">
@@ -253,7 +253,7 @@ useEffect(() => {
 
                   {/* Content */}
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{theme.name}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 elegant-font">{theme.name}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{theme.description}</p>
 
                     {/* Collapsible: features + colors + select button */}
@@ -323,7 +323,7 @@ useEffect(() => {
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="border border-gray-200 rounded-2xl p-10 shadow-sm bg-white text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-amber-600 mb-4 tracking-tight elegant-font">
               Stay Connected with OSHDY
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">

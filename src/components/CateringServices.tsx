@@ -93,7 +93,7 @@ const CateringServices = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 elegant-font">
             Exceptional Catering Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -146,7 +146,7 @@ const CateringServices = () => {
 
               <div className="p-6">
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">{service.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 text-center elegant-font">{service.title}</h3>
 
                 {/* Description (desktop only) */}
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed hidden md:block">
@@ -196,10 +196,10 @@ const CateringServices = () => {
         </div>
 
         {/* Additional Services */}
-        <div className="bg-gray-50 rounded-2xl p-8">
+        <div className="bg-gradient-to-br from-amber-50 to-amber-100 shadow-2xl p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 elegant-font">
                 Complete Event Solutions
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">

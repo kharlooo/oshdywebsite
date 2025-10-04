@@ -135,7 +135,7 @@ const Navigation = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-gray-700 hover:text-amber-600 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap"
+                  className="text-gray-700 hover:text-amber-600 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap elegant-font"
                 >
                   {item.name}
                 </button>
@@ -174,7 +174,7 @@ const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className={`text-gray-700 hover:text-amber-600 hover:bg-amber-50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 w-full text-left transform ${
+                className={`text-gray-700 hover:text-amber-600 hover:bg-amber-50 block px-3 py-3 rounded-md text-base font-medium transition-all duration-200 w-full text-left transform elegant-font ${
                   isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
                 }`}
                 style={{
@@ -187,6 +187,17 @@ const Navigation = () => {
           </div>
         </div>
       </div>
+
+      {/* Add style tag for the elegant font */}
+      <style>
+        {`
+          .elegant-font {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+          }
+        `}
+      </style>
     </nav>
   );
 };

@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import LearnMore from "./pages/LearnMore";
+import FeedbackWidget from "./components/FeedbackWidget"; // Add this import
 
 const queryClient = new QueryClient();
 
@@ -36,6 +36,9 @@ const App = () => (
           <Route path="/how-it-works" element={<LearnMore />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        
+        {/* Add FeedbackWidget here - it will be available on all pages */}
+        <FeedbackWidget />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

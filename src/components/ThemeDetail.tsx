@@ -334,8 +334,8 @@ const ThemeDetail = () => {
             >
               <theme.icon className="w-16 h-16 mx-auto text-amber-400" />
             </motion.div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{theme.title}</h1>
-            <p className="text-xl md:text-2xl">{theme.subtitle}</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 elegant-font">{theme.title}</h1>
+            <p className="text-xl md:text-2xl elegant-font">{theme.subtitle}</p>
           </div>
         </div>
       </div>
@@ -349,7 +349,7 @@ const ThemeDetail = () => {
 
           {/* Color Palette */}
           <div className="mb-12 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Color Palette</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 elegant-font">Color Palette</h3>
             <div className="flex justify-center gap-4">
               {theme.colors.map((color) => (
                 <span key={color} className="px-4 py-2 bg-amber-100 text-amber-800 rounded-full font-medium">
@@ -363,17 +363,17 @@ const ThemeDetail = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
               <Users className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Minimum Guests</h3>
+              <h3 className="font-semibold text-gray-900 mb-2 elegant-font">Minimum Guests</h3>
               <p className="text-gray-600">{theme.additionalInfo.minimumGuests} people</p>
             </div>
             <div className="text-center">
               <Clock className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Planning Time</h3>
+              <h3 className="font-semibold text-gray-900 mb-2 elegant-font">Planning Time</h3>
               <p className="text-gray-600">{theme.additionalInfo.planningTime}</p>
             </div>
             <div className="text-center">
               <Sparkles className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-              <h3 className="font-semibold text-gray-900 mb-2">Perfect For</h3>
+              <h3 className="font-semibold text-gray-900 mb-2 elegant-font">Perfect For</h3>
               <p className="text-gray-600">{theme.additionalInfo.ageGroup}</p>
             </div>
           </div>
@@ -389,7 +389,7 @@ const ThemeDetail = () => {
     <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
         {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
@@ -403,7 +403,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Food Menu</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
               {Object.entries(foodIcons1).map(([label, Icon], index) => (
@@ -424,7 +424,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
             </div>
             <div className="space-y-6">
   {[
@@ -454,7 +454,7 @@ const ThemeDetail = () => {
         <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
           <div className="flex items-center mb-6">
             <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">
+            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
               Complete Inclusions
             </h3>
           </div>
@@ -500,7 +500,7 @@ const ThemeDetail = () => {
     <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
         {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
@@ -514,7 +514,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Food Menu</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
               {Object.entries(foodIcons2).map(([label, Icon], index) => (
@@ -535,7 +535,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
             </div>
             <div className="space-y-6">
   {[
@@ -565,7 +565,7 @@ const ThemeDetail = () => {
         <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
           <div className="flex items-center mb-6">
             <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">
+            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
               Complete Inclusions
             </h3>
           </div>
@@ -611,7 +611,7 @@ const ThemeDetail = () => {
     <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
         {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
@@ -625,7 +625,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Food Menu</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
               {Object.entries(foodIcons2).map(([label, Icon], index) => (
@@ -646,7 +646,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
             </div>
             <div className="space-y-6">
   {[
@@ -676,7 +676,7 @@ const ThemeDetail = () => {
         <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
           <div className="flex items-center mb-6">
             <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">
+            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
               Complete Inclusions
             </h3>
           </div>
@@ -722,7 +722,7 @@ const ThemeDetail = () => {
     <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
         {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
@@ -736,7 +736,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Food Menu</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
               {Object.entries(foodIcons1).map(([label, Icon], index) => (
@@ -757,7 +757,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
             </div>
             <div className="space-y-6">
   {[
@@ -787,7 +787,7 @@ const ThemeDetail = () => {
         <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
           <div className="flex items-center mb-6">
             <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">
+            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
               Complete Inclusions
             </h3>
           </div>
@@ -833,7 +833,7 @@ const ThemeDetail = () => {
     <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
         {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
@@ -846,7 +846,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Food Menu</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
               {Object.entries(foodIcons2).map(([label, Icon], index) => (
@@ -867,7 +867,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
             </div>
             <div className="space-y-6">
   {[
@@ -897,7 +897,7 @@ const ThemeDetail = () => {
         <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
           <div className="flex items-center mb-6">
             <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">
+            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
               Complete Inclusions
             </h3>
           </div>
@@ -941,7 +941,7 @@ const ThemeDetail = () => {
     <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
     <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight">
+      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
         {theme.title} Inclusions & Packages
       </h2>
       <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
@@ -955,7 +955,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Food Menu</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
               {Object.entries(foodIcons1).map(([label, Icon], index) => (
@@ -976,7 +976,7 @@ const ThemeDetail = () => {
           <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
             <div className="flex items-center mb-6">
               <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">Packages</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
             </div>
             <div className="space-y-6">
   {[
@@ -1006,7 +1006,7 @@ const ThemeDetail = () => {
         <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
           <div className="flex items-center mb-6">
             <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight">
+            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
               Complete Inclusions
             </h3>
           </div>
@@ -1048,7 +1048,7 @@ const ThemeDetail = () => {
       {/* Download App CTA */}
 <div className="py-16 bg-amber-600">
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 className="text-3xl font-bold text-white mb-4">
+    <h2 className="text-3xl font-bold text-white mb-4 elegant-font">
       Ready to Book Your {theme.title} Celebration?
     </h2>
     <p className="text-xl text-amber-100 mb-8">

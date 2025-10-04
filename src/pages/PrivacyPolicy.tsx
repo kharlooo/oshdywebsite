@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
       {/* Header Section */}
       <div className="bg-gradient-to-br from-amber-100 to-orange-100 py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4 elegant-font">Privacy Policy</h1>
           <p className="text-lg text-gray-700">
             Learn how OSHDY Events handles your data while browsing our website.
           </p>
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">1</span>
-              <span>Information We Collect</span>
+              <span className="elegant-font">Information We Collect</span>
               <Shield className="w-5 h-5 text-amber-600" />
             </div>
             <p>Our website is designed for informational purposes. We do not collect personal information such as names, phone numbers, or email addresses directly through the website. However, we may use basic web analytics tools (like cookies or similar technologies) to understand user behavior and improve our content.</p>
@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.1 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">2</span>
-              <span>How We Use Information</span>
+              <span className="elegant-font">How We Use Information</span>
               <FileText className="w-5 h-5 text-amber-600" />
             </div>
             <p>The information we collect via analytics is used solely for:</p>
@@ -94,7 +94,7 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.2 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">3</span>
-              <span>Data Security</span>
+              <span className="elegant-font">Data Security</span>
               <Lock className="w-5 h-5 text-amber-600" />
             </div>
             <p>We take reasonable steps to secure our website and any analytics data. Our hosting and security providers follow modern best practices, but no method of transmission over the Internet is 100% secure.</p>
@@ -103,7 +103,7 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.3 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">4</span>
-              <span>Third Party Links</span>
+              <span className="elegant-font">Third Party Links</span>
               <ExternalLink className="w-5 h-5 text-amber-600" />
             </div>
             <p>Our website contains links to download our mobile application. Once you leave our site, your data will be governed by the policies of the third party platforms (e.g., Google Play Store, Apple App Store).</p>
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.4 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">5</span>
-              <span>Contact Us</span>
+              <span className="elegant-font">Contact Us</span>
               <Mail className="w-5 h-5 text-amber-600" />
             </div>
             <p>If you have any questions about this policy, you may contact us at:</p>
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
           <motion.section variants={fadeUp} initial="hidden" animate="visible" transition={{ duration: 0.4, delay: 0.5 }} className="p-6 bg-white rounded-xl border shadow-sm">
             <div className="flex items-center gap-3 text-xl font-semibold text-gray-900 mb-2">
               <span className="bg-amber-600 text-white w-7 h-7 flex items-center justify-center rounded-full text-sm font-bold">6</span>
-              <span>Updates to This Policy</span>
+              <span className="elegant-font">Updates to This Policy</span>
               <RefreshCcw className="w-5 h-5 text-amber-600" />
             </div>
             <p>We may revise this policy from time to time. The latest version will always be available on our website with the updated date.</p>

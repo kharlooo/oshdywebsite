@@ -74,7 +74,7 @@ const HowItWorks = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl font-bold text-foreground mb-6">How It Works</h1>
+            <h1 className="text-5xl font-bold text-foreground mb-6 elegant-font">How It Works</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Get started with OSHDY in just three simple steps. From downloading the app to celebrating your special moments.
             </p>
@@ -120,7 +120,7 @@ const HowItWorks = () => {
                       1
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold text-foreground">Download the App</h2>
+                      <h2 className="text-3xl font-bold text-foreground elegant-font">Download the App</h2>
                       <p className="text-muted-foreground">Available on Android and IOS</p>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const HowItWorks = () => {
           2
         </div>
         <div>
-          <h2 className="text-3xl font-bold text-foreground">Explore Our Services</h2>
+          <h2 className="text-3xl font-bold text-foreground elegant-font">Explore Our Services</h2>
           <p className="text-muted-foreground">Discover what we offer</p>
         </div>
       </div>
@@ -213,7 +213,7 @@ const HowItWorks = () => {
                       3
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold text-foreground">Book Your Event</h2>
+                      <h2 className="text-3xl font-bold text-foreground elegant-font">Book Your Event</h2>
                       <p className="text-muted-foreground">Simple and secure booking</p>
                     </div>
                   </div>
