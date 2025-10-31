@@ -38,7 +38,7 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 elegant-font">
-            About OSHDY
+            About OSHDY Events
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Founded on the belief that every celebration deserves exceptional care, we've been creating unforgettable moments for families and businesses for over 15 years.

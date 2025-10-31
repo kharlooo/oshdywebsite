@@ -161,7 +161,7 @@ const FeedbackWidget = () => {
 
   const handleDownloadApp = () => {
     // Android-only distribution: read URL from Vite env and fallback to Play Store
-    const androidUrl = (import.meta.env.VITE_ANDROID_DOWNLOAD_URL as string) || '';
+    const androidUrl = (import.meta.env.VITE_ANDROID_DOWNLOAD_URL as string) || 'https://www.upload-apk.com/Hht9ZHTFFwUi7A8';
     window.open(androidUrl, '_blank');
   };
 

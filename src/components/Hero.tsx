@@ -19,7 +19,7 @@ const Hero = () => {
     if (isMobile) {
       setTimeout(() => {
         console.log("Download started (mobile after delay)");
-        window.location.href = "/download"; // replace with your actual app link
+        window.open("https://www.upload-apk.com/Hht9ZHTFFwUi7A8", "_blank"); // replace with your actual app link
       }, 200);
     } else {
       console.log("Download started (desktop instantly)");
