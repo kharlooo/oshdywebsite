@@ -1,10 +1,10 @@
 import { Heart, MapPin, Phone, Mail, Globe, Facebook } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
+  const androidUrl = import.meta.env.VITE_ANDROID_DOWNLOAD_URL || 'https://www.upload-apk.com/en/Hht9ZHTFFwUi7A8';
 
   const handleLinkClick = (url, isExternal = false) => {
     // Check if it's a touch device (mobile)
@@ -118,7 +118,8 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               Ready to plan your perfect event? Download our mobile app for easy booking.
             </p>
-            <button className="mt-3 bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200">
+            <button 
+            onClick={() => window.open(androidUrl, '_blank')} className="mt-3 bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200">
               Get Our App
             </button>
           </div>

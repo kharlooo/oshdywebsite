@@ -2,11 +2,16 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Coffee, Apple, Candy, CheckCircle } from 'lucide-react';
+import ImageWithSkeleton from './ui/image-with-skeleton';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
 const GrazingTableDetail = () => {
   const { packageId } = useParams();
   const navigate = useNavigate();
+  const androidUrl = import.meta.env.VITE_ANDROID_DOWNLOAD_URL || 'https://www.upload-apk.com/en/Hht9ZHTFFwUi7A8';
+
+
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,8 +24,8 @@ const GrazingTableDetail = () => {
       bgGradient: 'from-amber-100 to-orange-100',
       description: 'Traditional Filipino delicacies and sweet treats that bring the authentic taste of local kakanin to your event.',
       pricing: [
-        { pax: 100, price: '12,000' },
-        { pax: 50, price: '8,000' }
+        { pax: 200 },
+        { pax:  100}
       ],
       includes: [
         'Sapin-Sapin',
@@ -41,8 +46,8 @@ const GrazingTableDetail = () => {
       bgGradient: 'from-green-100 to-emerald-100',
       description: 'Premium selection of fresh fruits, quality deli items, and baked goods for a sophisticated grazing experience.',
       pricing: [
-        { pax: 100, price: '15,000' },
-        { pax: 50, price: '10,000' }
+        { pax: 200, price: '15,000' },
+        { pax: 100, price: '10,000' }
       ],
       includes: [
         'Sliced Fruits: Oranges, Grapes, Pineapple, Melons, Watermelons',
@@ -62,8 +67,8 @@ const GrazingTableDetail = () => {
       bgGradient: 'from-pink-100 to-purple-100',
       description: 'A delightful sweets and candy station that brings joy to guests of all ages with an amazing variety of treats.',
       pricing: [
-        { pax: 100, price: '8,000' },
-        { pax: 50, price: '5,000' }
+        { pax: 200, price: '8,000' },
+        { pax: 100, price: '5,000' }
       ],
       includes: [
         'Assorted Dowey Donut Wall',
@@ -140,10 +145,10 @@ const GrazingTableDetail = () => {
   animate="visible"
   transition={{ duration: 0.5 }}
 >
-  <img 
-    src={`/${packageId}.jpg`} 
-    alt={currentPackage.title} 
-    className="w-full rounded-2xl shadow-lg border border-gray-200 object-cover h-80"
+  <ImageWithSkeleton
+    src={`/${packageId}.jpg`}
+    alt={currentPackage.title}
+    imgClass="w-full rounded-2xl shadow-lg border border-gray-200 object-cover h-80"
   />
 </motion.div>
 
@@ -236,18 +241,7 @@ const GrazingTableDetail = () => {
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <button 
-          onClick={() => {
-            // Check if it's a touch device (mobile)
-            if ('ontouchstart' in window) {
-              setTimeout(() => {
-                // Your download app logic here
-                console.log("Download app button clicked on mobile");
-              }, 200);
-            } else {
-              // Regular behavior for non-touch devices
-              console.log("Download app button clicked on desktop");
-            }
-          }}
+          onClick={() => window.open(androidUrl, '_blank')}
           className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors duration-200"
         >
           Download App Now

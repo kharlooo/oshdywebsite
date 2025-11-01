@@ -13,7 +13,7 @@ const GrazingTable = () => {
       textColor: 'text-amber-800',
       bgColor: 'bg-amber-200/50', 
       description: 'Traditional Filipino delicacies and sweet treats',
-      pricing: [{ pax: 100 }, { pax: 50 }]
+      pricing: [{ pax: 200 }, { pax: 100 }]
     },
     {
       id: 'mixed-deli',
@@ -23,7 +23,7 @@ const GrazingTable = () => {
       textColor: 'text-green-800',
       bgColor: 'bg-green-200/50', 
       description: 'Premium selection of fruits, deli, and baked goods',
-      pricing: [{ pax: 100 }, { pax: 50 }]
+      pricing: [{ pax: 200 }, { pax: 100 }]
     },
     {
       id: 'candy-corner',
@@ -33,7 +33,7 @@ const GrazingTable = () => {
       textColor: 'text-pink-800',
       bgColor: 'bg-pink-200/50', 
       description: 'Delightful sweets and candy station for all ages',
-      pricing: [{ pax: 100 }, { pax: 50 }]
+      pricing: [{ pax: 200 }, { pax: 100 }]
     }
   ];
 

@@ -22,6 +22,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from './ui/carousel';
+import ImageWithSkeleton from './ui/image-with-skeleton';
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -290,12 +291,14 @@ const handleBackClick = () => {
               onClick={() => openGallery(category.title)}
             >
               <div className="relative h-36 w-full overflow-hidden rounded-t-xl">
-  <img
-    src={category.image}
-    alt={category.title}
-    className={`absolute inset-0 w-full h-full object-cover transition-all duration-300
-      ${isMobile ? "" : "group-hover:blur-sm"}`} // ✅ only blur on desktop
-  />
+              <ImageWithSkeleton
+                src={category.image}
+                alt={category.title}
+                wrapperClass="absolute inset-0"
+                imgClass={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${isMobile ? "" : "group-hover:blur-sm"}`}
+                skeletonClass="bg-gray-200 animate-pulse"
+                loading={index < 4 ? 'eager' : 'lazy'}
+              />
 
   {/* Icon in bottom-left */}
   <div className="absolute bottom-2 left-2 z-10 bg-white rounded-full p-2 shadow-md">
@@ -360,13 +363,14 @@ const handleBackClick = () => {
     <CarouselContent>
       {selectedImages.map((img, i) => (
         <CarouselItem key={i}>
-          <div
+            <div
             className="relative w-full h-[60vh] flex items-center justify-center p-2 sm:h-[80vh] sm:p-4 rounded-xl"
           >
-            <img
+            <ImageWithSkeleton
               src={img}
               alt={getImageLabel(selectedCategory, i)}
-              className="max-h-[50vh] max-w-full object-contain rounded-lg shadow-lg sm:max-h-full sm:rounded-lg"
+              imgClass="max-h-[50vh] max-w-full object-contain rounded-lg shadow-lg sm:max-h-full sm:rounded-lg"
+              skeletonClass="bg-gray-200 animate-pulse"
             />
             {/* Image Label */}
             <div

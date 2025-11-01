@@ -291,6 +291,8 @@ const ThemeDetail = () => {
     );
   }
 
+  const androidUrl = import.meta.env.VITE_ANDROID_DOWNLOAD_URL || 'https://www.upload-apk.com/en/Hht9ZHTFFwUi7A8';
+
   return (
   <div className="min-h-screen pt-16 relative">
     <motion.button
@@ -428,8 +430,8 @@ const ThemeDetail = () => {
             </div>
             <div className="space-y-6">
   {[
-    { pax: '100 Pax' },
-    { pax: '50 Pax' }
+    { pax: '200 Pax' },
+    { pax: '100 Pax' }
   ].map((item, idx) => (
     <div
       key={idx}
@@ -539,9 +541,10 @@ const ThemeDetail = () => {
             </div>
             <div className="space-y-6">
   {[
-    { pax: '100 Pax' },
-    { pax: '50 Pax' }
-  ].map((item, idx) => (
+    { pax: '200 Pax' },
+    { pax: '100 Pax' }
+  ].map((
+    item, idx) => (
     <div
       key={idx}
       className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
@@ -650,8 +653,8 @@ const ThemeDetail = () => {
             </div>
             <div className="space-y-6">
   {[
-    { pax: '100 Pax' },
-    { pax: '50 Pax' }
+    { pax: '200 Pax' },
+    { pax: '100 Pax' }
   ].map((item, idx) => (
     <div
       key={idx}
@@ -761,8 +764,8 @@ const ThemeDetail = () => {
             </div>
             <div className="space-y-6">
   {[
-    { pax: '100 Pax' },
-    { pax: '50 Pax' }
+    { pax: '200 Pax' },
+    { pax: '100 Pax' }
   ].map((item, idx) => (
     <div
       key={idx}
@@ -871,8 +874,8 @@ const ThemeDetail = () => {
             </div>
             <div className="space-y-6">
   {[
-    { pax: '100 Pax' },
-    { pax: '50 Pax' }
+    { pax: '200 Pax' },
+    { pax: '100 Pax' }
   ].map((item, idx) => (
     <div
       key={idx}
@@ -980,8 +983,8 @@ const ThemeDetail = () => {
             </div>
             <div className="space-y-6">
   {[
-    { pax: '100 Pax' },
-    { pax: '50 Pax' }
+    { pax: '200 Pax' },
+    { pax: '100 Pax' }
   ].map((item, idx) => (
     <div
       key={idx}
@@ -1058,19 +1061,7 @@ const ThemeDetail = () => {
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
       <button 
         className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
-        onClick={(e) => {
-          // Check if it's a touch device (mobile)
-          if ('ontouchstart' in window) {
-            e.preventDefault();
-            setTimeout(() => {
-              // Your download app logic here
-              console.log("Download app button clicked on mobile");
-            }, 200);
-          } else {
-            // Regular behavior for non-touch devices
-            console.log("Download app button clicked on desktop");
-          }
-        }}
+        onClick={() => window.open(androidUrl, '_blank')}
       >
         <Download className="w-5 h-5 mr-2" />
         Download Our App

@@ -5,6 +5,7 @@ import { Check } from 'lucide-react';
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+   const androidUrl = import.meta.env.VITE_ANDROID_DOWNLOAD_URL || 'https://www.upload-apk.com/en/Hht9ZHTFFwUi7A8';
 
   // ✅ Detect mobile screen size (Tailwind sm breakpoint: 640px)
   useEffect(() => {
@@ -14,16 +15,18 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkScreen);
   }, []);
 
+  
   // ✅ Handle Download button click
   const handleDownloadClick = () => {
     if (isMobile) {
       setTimeout(() => {
         console.log("Download started (mobile after delay)");
-        window.open("https://www.upload-apk.com/Hht9ZHTFFwUi7A8", "_blank"); // replace with your actual app link
+        
+        window.open(androidUrl, '_blank');
       }, 200);
     } else {
       console.log("Download started (desktop instantly)");
-      window.location.href = "/download"; // replace with your actual app link
+      window.open(androidUrl, '_blank');
     }
   };
 

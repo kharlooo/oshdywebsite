@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ZoomIn } from 'lucide-react';
+import ImageWithSkeleton from './ui/image-with-skeleton';
 
 interface ImageGalleryProps {
   serviceType: string;
@@ -70,14 +71,14 @@ const ImageGallery = ({ serviceType }: ImageGalleryProps) => {
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div 
+                    <div
                       className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                       onClick={() => setSelectedImage(image)}
                     >
-                      <img
+                      <ImageWithSkeleton
                         src={image}
                         alt={`Gallery image ${index + 1}`}
-                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                        imgClass="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
                         <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -86,10 +87,10 @@ const ImageGallery = ({ serviceType }: ImageGalleryProps) => {
                   </DialogTrigger>
                   <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
                     <div className="relative">
-                      <img
+                      <ImageWithSkeleton
                         src={selectedImage || image}
                         alt={`Gallery image ${index + 1} - Zoomed`}
-                        className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                        imgClass="w-full h-auto max-h-[80vh] object-contain rounded-lg"
                       />
                     </div>
                   </DialogContent>

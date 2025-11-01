@@ -4,10 +4,11 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import ImageWithSkeleton from '../components/ui/image-with-skeleton';
 
 const HowItWorks = () => {
   const navigate = useNavigate();
-
+const androidUrl = import.meta.env.VITE_ANDROID_DOWNLOAD_URL || 'https://www.upload-apk.com/en/Hht9ZHTFFwUi7A8';
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -121,7 +122,9 @@ const HowItWorks = () => {
                     </div>
                     <div>
                       <h2 className="text-3xl font-bold text-foreground elegant-font">Download the App</h2>
-                      <p className="text-muted-foreground">Available on Android and IOS</p>
+                      <p className="text-muted-foreground">Available on Android
+                        
+                      </p>
                     </div>
                   </div>
                   <div className="space-y-4">
@@ -142,17 +145,23 @@ const HowItWorks = () => {
                 <div className="order-2 md:order-1 text-center">
                   <div className="bg-card rounded-2xl p-8 shadow-lg border">
                     <Smartphone className="w-16 h-16 text-amber-600 mx-auto mb-6" />
-                    <div className="w-48 h-48 bg-muted rounded-lg mx-auto mb-6 flex items-center justify-center">
-                      <span className="text-muted-foreground">QR Code Placeholder</span>
+                    <div className="w-48 h-48 bg-muted rounded-lg mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                      <ImageWithSkeleton
+                        src="/appqr.png"
+                        alt="App QR"
+                        aspectRatio={1}
+                        wrapperClass="w-40 h-40"
+                        imgClass="w-full h-full object-contain"
+                      />
                     </div>
                     <a
-                      href="https://oshdy.app/download"
+                      href={androidUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-all duration-200 hover:scale-105 shadow-lg"
                     >
                       <Download className="w-5 h-5 mr-2" />
-                      Download Now
+                      Download 
                     </a>
                   </div>
                 </div>
