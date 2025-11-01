@@ -160,9 +160,6 @@ const FeedbackWidget = () => {
     return colors[category] || 'bg-gray-50 text-gray-700 border-gray-200';
   };
 
-  const handleDownloadApp = () => {
-    window.open(androidUrl, '_blank');
-  };
 
   return (
     <>
@@ -254,7 +251,7 @@ const FeedbackWidget = () => {
                       </div>
                     </div>
                     <Button
-                      onClick={handleDownloadApp}
+                      onClick={() => window.open(androidUrl, '_blank')}
                       aria-label="Download Android app"
                       className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-1.5 px-3 text-xs flex items-center space-x-1.5 transition-colors duration-200 rounded-lg"
                     >

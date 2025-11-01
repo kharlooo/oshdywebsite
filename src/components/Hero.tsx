@@ -16,19 +16,7 @@ const Hero = () => {
   }, []);
 
   
-  // ✅ Handle Download button click
-  const handleDownloadClick = () => {
-    if (isMobile) {
-      setTimeout(() => {
-        console.log("Download started (mobile after delay)");
-        
-        window.open(androidUrl, '_blank');
-      }, 200);
-    } else {
-      console.log("Download started (desktop instantly)");
-      window.open(androidUrl, '_blank');
-    }
-  };
+
 
   // ✅ Handle Menu button click
   const handleMenuClick = (e) => {
@@ -68,7 +56,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           {/* Download button with delay */}
           <button
-            onClick={handleDownloadClick}
+            onClick={() =>  window.open(androidUrl, '_blank')}
             className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 transform hover:scale-105"
           >
             Download App Now
