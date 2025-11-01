@@ -22,7 +22,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from './ui/carousel';
-import ImageWithSkeleton from './ui/image-with-skeleton';
+ 
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -291,13 +291,11 @@ const handleBackClick = () => {
               onClick={() => openGallery(category.title)}
             >
               <div className="relative h-36 w-full overflow-hidden rounded-t-xl">
-              <ImageWithSkeleton
+              <img
                 src={category.image}
                 alt={category.title}
-                wrapperClass="absolute inset-0"
-                imgClass={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${isMobile ? "" : "group-hover:blur-sm"}`}
-                skeletonClass="bg-gray-200 animate-pulse"
                 loading={index < 4 ? 'eager' : 'lazy'}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${isMobile ? "" : "group-hover:blur-sm"}`}
               />
 
   {/* Icon in bottom-left */}
@@ -366,11 +364,11 @@ const handleBackClick = () => {
             <div
             className="relative w-full h-[60vh] flex items-center justify-center p-2 sm:h-[80vh] sm:p-4 rounded-xl"
           >
-            <ImageWithSkeleton
+            <img
               src={img}
               alt={getImageLabel(selectedCategory, i)}
-              imgClass="max-h-[50vh] max-w-full object-contain rounded-lg shadow-lg sm:max-h-full sm:rounded-lg"
-              skeletonClass="bg-gray-200 animate-pulse"
+              loading="lazy"
+              className="max-h-[50vh] max-w-full object-contain rounded-lg shadow-lg sm:max-h-full sm:rounded-lg"
             />
             {/* Image Label */}
             <div
