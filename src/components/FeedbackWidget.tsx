@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, X, Calendar, User, Mail, Smartphone, Download } from "lucide-react";
+import { Users, X, Calendar, User, Smartphone, Download } from "lucide-react";
 
 const FeedbackWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,17 +27,25 @@ const FeedbackWidget = () => {
 
   // Real-time feedback state (always call hooks at top level)
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
+  //
+
+  // Helper: decide visibility on client
+  const isShowOnWebsite = (row: any) => {
+    const v = (row?.show_on_website ?? row?.showWebsite) ?? row?.show_website;
+    if (typeof v === 'string') return v.toLowerCase() === 'true' || v === '1';
+    if (typeof v === 'number') return v === 1; // numeric truthy
+    return v === true;
+  };
 
   useEffect(() => {
-    // Fetch initial feedbacks
+    // Fetch ALL feedbacks unfiltered; UI decides visibility
     const fetchFeedbacks = async () => {
       const { data, error } = await supabase
         .from('feedbacks')
         .select('*')
-        .order('created_at', { ascending: false });
-      if (!error && data) {
-        setFeedbacks(data as Feedback[]);
-      }
+        .order('id', { ascending: false })
+        .limit(5);
+      if (!error && data) setFeedbacks(data as Feedback[]);
     };
     fetchFeedbacks();
 
@@ -48,16 +56,32 @@ const FeedbackWidget = () => {
         'postgres_changes',
         { event: '*', schema: 'public', table: 'feedbacks' },
         (payload) => {
+          // Realtime: keep all rows; visibility handled in rendering
+
           setFeedbacks((prev) => {
             if (payload.eventType === 'INSERT') {
               const inserted = payload.new as Feedback;
-              return [inserted, ...prev];
-            } else if (payload.eventType === 'UPDATE') {
+              // Prepend and then trim to 5 most recent (descending id)
+              const next = [inserted, ...prev];
+              return next
+                .sort((a, b) => b.id - a.id)
+                .slice(0, 5);
+            }
+
+            if (payload.eventType === 'UPDATE') {
               const updated = payload.new as Feedback;
-              return prev.map((f) => f.id === updated.id ? updated : f);
-            } else if (payload.eventType === 'DELETE') {
+              const exists = prev.some(f => f.id === updated.id);
+              const replaced = exists ? prev.map(f => f.id === updated.id ? updated : f) : [updated, ...prev];
+              return replaced
+                .sort((a, b) => b.id - a.id)
+                .slice(0, 5);
+            }
+
+            if (payload.eventType === 'DELETE') {
               const removed = payload.old as Feedback;
-              return prev.filter((f) => f.id !== removed.id);
+              const filtered = prev.filter((f) => f.id !== removed.id);
+              // After deletion, just ensure descending and still capped (though length will be <=5 already)
+              return filtered.sort((a, b) => b.id - a.id).slice(0, 5);
             }
             return prev;
           });
@@ -262,10 +286,20 @@ const FeedbackWidget = () => {
 
                   {/* Insights List */}
                   <div className="flex-1 overflow-y-auto space-y-3 min-h-0">
-                    {feedbacks.length === 0 ? (
+                    {feedbacks.filter(f => {
+                      const v = (f as any).show_on_website ?? (f as any).showWebsite ?? (f as any).show_website;
+                      if (typeof v === 'string') return v.toLowerCase() === 'true' || v === '1';
+                      if (typeof v === 'number') return v === 1;
+                      return v === true;
+                    }).length === 0 ? (
                       <div className="text-center text-gray-500 text-sm py-8">No feedbacks yet.</div>
                     ) : (
-                      feedbacks.map((feedback) => (
+                      feedbacks.filter(f => {
+                        const v = (f as any).show_on_website ?? (f as any).showWebsite ?? (f as any).show_website;
+                        if (typeof v === 'string') return v.toLowerCase() === 'true' || v === '1';
+                        if (typeof v === 'number') return v === 1;
+                        return v === true;
+                      }).map((feedback) => (
                         <div
                           key={feedback.id}
                           className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors duration-200"
@@ -279,10 +313,7 @@ const FeedbackWidget = () => {
                                 </div>
                                 <div>
                                   <p className="font-medium text-gray-900 text-sm">{feedback.name}</p>
-                                  <div className="flex items-center space-x-1 text-xs text-gray-500">
-                                    <Mail className="h-3 w-3" />
-                                    <span>{feedback.email}</span>
-                                  </div>
+                                  {/* Email removed per request */}
                                 </div>
                               </div>
                               <div className="flex items-center space-x-1 text-gray-500 text-xs">
