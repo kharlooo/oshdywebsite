@@ -313,7 +313,6 @@ const FeedbackWidget = () => {
                                 </div>
                                 <div>
                                   <p className="font-medium text-gray-900 text-sm">{feedback.name}</p>
-                                  {/* Email removed per request */}
                                 </div>
                               </div>
                               <div className="flex items-center space-x-1 text-gray-500 text-xs">

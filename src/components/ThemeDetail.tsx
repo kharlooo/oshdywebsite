@@ -272,9 +272,9 @@ const ThemeDetail = () => {
   };
 
   const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   const theme = themeData[themeId as keyof typeof themeData];
 
@@ -294,45 +294,45 @@ const ThemeDetail = () => {
   const androidUrl = import.meta.env.VITE_ANDROID_DOWNLOAD_URL || 'https://www.upload-apk.com/en/Hht9ZHTFFwUi7A8';
 
   return (
-  <div className="min-h-screen pt-16 relative">
-    <motion.button
-  initial={{ x: -100, opacity: 0 }}
-  animate={{ x: 0, opacity: 1 }}
-  transition={{ duration: 0.3 }}
-  onClick={() => {
-    // Check if it's a touch device (mobile)
-    if ('ontouchstart' in window) {
-      setTimeout(() => {
-        navigate(-1);
-        setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 50);
-      }, 150);
-    } else {
-      // Regular behavior for non-touch devices
-      navigate(-1);
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 50);
-    }
-  }}
-  className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
-  aria-label="Go Back"
->
-  <ArrowLeft className="w-5 h-5" />
-</motion.button>
+    <div className="min-h-screen pt-16 relative">
+      <motion.button
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        onClick={() => {
+          // Check if it's a touch device (mobile)
+          if ('ontouchstart' in window) {
+            setTimeout(() => {
+              navigate(-1);
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 50);
+            }, 150);
+          } else {
+            // Regular behavior for non-touch devices
+            navigate(-1);
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 50);
+          }
+        }}
+        className="fixed top-24 left-4 z-30 border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white p-3 rounded-full shadow-md transition duration-300"
+        aria-label="Go Back"
+      >
+        <ArrowLeft className="w-5 h-5" />
+      </motion.button>
 
       {/* Hero Section */}
       <div className="relative h-96 bg-cover bg-center" style={{ backgroundImage: `url(${theme.heroImage})` }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
           <div>
-            <motion.div 
-            className="mb-4"
-            variants={fadeUp}
-  initial="hidden"
-  animate="visible"
-  transition={{ duration: 0.4, delay: 0.2}}
+            <motion.div
+              className="mb-4"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.4, delay: 0.2 }}
             >
               <theme.icon className="w-16 h-16 mx-auto text-amber-400" />
             </motion.div>
@@ -387,708 +387,708 @@ const ThemeDetail = () => {
 
       {/* Elegant Inclusions Section */}
       {themeId === 'wedding-honey' && (
-  <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
+        <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
-    <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
-        {theme.title} Inclusions & Packages
-      </h2>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
-        A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
-      </p>
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
+              {theme.title} Inclusions & Packages
+            </h2>
+            <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
+              A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
+            </p>
 
-      {/* Food Menu + Pricing */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Food Menu */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
-              {Object.entries(foodIcons1).map(([label, Icon], index) => (
-                <div
-                  key={index}
-                  className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 mb-1" />
-                  {label}
+            {/* Food Menu + Pricing */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+              {/* Food Menu */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Utensils className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
+                    {Object.entries(foodIcons1).map(([label, Icon], index) => (
+                      <div
+                        key={index}
+                        className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
+                      >
+                        <Icon className="w-5 h-5 mb-1" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Package Pricing */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
-            </div>
-            <div className="space-y-6">
-  {[
-    { pax: '200 Pax' },
-    { pax: '100 Pax' }
-  ].map((item, idx) => (
-    <div
-      key={idx}
-      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
-    >
-      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
-        {item.pax}
-      </h4>
-    </div>
-  ))}
-</div>
-
-            <div className="mt-6 text-center text-sm italic text-gray-500">
-              Download the app to see the prices.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Package Inclusions */}
-      <div className="mb-16">
-        <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
-          <div className="flex items-center mb-6">
-            <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
-              Complete Inclusions
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Elegant theme backdrop with artificial flowers',
-              'Couch and red carpet or green carpet',
-              'Arch entrance with artificial leaves and flowers',
-              'Cake and gift tables with skirting',
-              'Presidential tables with tiffany chairs',
-              'Round tables with white linen and array color topper',
-              'Artificial flowers with vase & table numbers',
-              'Tiffany chairs with array color ribbons',
-              'Buffet long table with skirting & centerpiece',
-              'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
-              'Uniformed waiters and food server',
-              'Purified tube ice and mineral water'
-            ].map((inclusion, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
-              >
-                <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{inclusion}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Note */}
-      <div className="text-center">
-        <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
-          ⏳ Note: 4 to 5 hours limit time. Beginning program included.
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+              {/* Package Pricing */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Crown className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { pax: '200 Pax' },
+                      { pax: '100 Pax' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+                      >
+                        <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+                          {item.pax}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 text-center text-sm italic text-gray-500">
+                    Download the app.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Inclusions */}
+            <div className="mb-16">
+              <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
+                <div className="flex items-center mb-6">
+                  <Crown className="w-6 h-6 text-green-500 mr-2" />
+                  <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
+                    Complete Inclusions
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Elegant theme backdrop with artificial flowers',
+                    'Couch and red carpet or green carpet',
+                    'Arch entrance with artificial leaves and flowers',
+                    'Cake and gift tables with skirting',
+                    'Presidential tables with tiffany chairs',
+                    'Round tables with white linen and array color topper',
+                    'Artificial flowers with vase & table numbers',
+                    'Tiffany chairs with array color ribbons',
+                    'Buffet long table with skirting & centerpiece',
+                    'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
+                    'Uniformed waiters and food server',
+                    'Purified tube ice and mineral water'
+                  ].map((inclusion, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                      <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="text-center">
+              <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
+                ⏳ Note: 4 to 5 hours limit time. Beginning program included.
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {themeId === 'wedding-love' && (
-  <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
+        <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
-    <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
-        {theme.title} Inclusions & Packages
-      </h2>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
-        A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
-      </p>
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
+              {theme.title} Inclusions & Packages
+            </h2>
+            <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
+              A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
+            </p>
 
-      {/* Food Menu + Pricing */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Food Menu */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
-              {Object.entries(foodIcons2).map(([label, Icon], index) => (
-                <div
-                  key={index}
-                  className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 mb-1" />
-                  {label}
+            {/* Food Menu + Pricing */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+              {/* Food Menu */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Utensils className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
+                    {Object.entries(foodIcons2).map(([label, Icon], index) => (
+                      <div
+                        key={index}
+                        className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
+                      >
+                        <Icon className="w-5 h-5 mb-1" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Package Pricing */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
-            </div>
-            <div className="space-y-6">
-  {[
-    { pax: '200 Pax' },
-    { pax: '100 Pax' }
-  ].map((
-    item, idx) => (
-    <div
-      key={idx}
-      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
-    >
-      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
-        {item.pax}
-      </h4>
-    </div>
-  ))}
-</div>
-
-            <div className="mt-6 text-center text-sm italic text-gray-500">
-              Download the app to see the prices.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Package Inclusions */}
-      <div className="mb-16">
-        <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
-          <div className="flex items-center mb-6">
-            <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
-              Complete Inclusions
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Elegant theme backdrop with artificial flowers',
-              'Couch and red carpet or green carpet',
-              'Arch entrance with artificial leaves and flowers',
-              'Cake and gift tables with skirting',
-              'Presidential tables with tiffany chairs',
-              'Round tables with white linen and array color topper',
-              'Artificial flowers with vase & table numbers',
-              'Tiffany chairs with array color ribbons',
-              'Buffet long table with skirting & centerpiece',
-              'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
-              'Uniformed waiters and food server',
-              'Purified tube ice and mineral water'
-            ].map((inclusion, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
-              >
-                <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{inclusion}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Note */}
-      <div className="text-center">
-        <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
-          ⏳ Note: 4 to 5 hours limit time. Beginning program included.
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+              {/* Package Pricing */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Crown className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { pax: '200 Pax' },
+                      { pax: '100 Pax' }
+                    ].map((
+                      item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+                      >
+                        <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+                          {item.pax}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 text-center text-sm italic text-gray-500">
+                    Download the app to see the prices.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Inclusions */}
+            <div className="mb-16">
+              <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
+                <div className="flex items-center mb-6">
+                  <Crown className="w-6 h-6 text-green-500 mr-2" />
+                  <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
+                    Complete Inclusions
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Elegant theme backdrop with artificial flowers',
+                    'Couch and red carpet or green carpet',
+                    'Arch entrance with artificial leaves and flowers',
+                    'Cake and gift tables with skirting',
+                    'Presidential tables with tiffany chairs',
+                    'Round tables with white linen and array color topper',
+                    'Artificial flowers with vase & table numbers',
+                    'Tiffany chairs with array color ribbons',
+                    'Buffet long table with skirting & centerpiece',
+                    'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
+                    'Uniformed waiters and food server',
+                    'Purified tube ice and mineral water'
+                  ].map((inclusion, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                      <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="text-center">
+              <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
+                ⏳ Note: 4 to 5 hours limit time. Beginning program included.
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {themeId === 'debutant-roses' && (
-  <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
+        <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
-    <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
-        {theme.title} Inclusions & Packages
-      </h2>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
-        A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
-      </p>
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
+              {theme.title} Inclusions & Packages
+            </h2>
+            <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
+              A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
+            </p>
 
-      {/* Food Menu + Pricing */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Food Menu */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
-              {Object.entries(foodIcons2).map(([label, Icon], index) => (
-                <div
-                  key={index}
-                  className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 mb-1" />
-                  {label}
+            {/* Food Menu + Pricing */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+              {/* Food Menu */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Utensils className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
+                    {Object.entries(foodIcons2).map(([label, Icon], index) => (
+                      <div
+                        key={index}
+                        className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
+                      >
+                        <Icon className="w-5 h-5 mb-1" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Package Pricing */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
-            </div>
-            <div className="space-y-6">
-  {[
-    { pax: '200 Pax' },
-    { pax: '100 Pax' }
-  ].map((item, idx) => (
-    <div
-      key={idx}
-      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
-    >
-      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
-        {item.pax}
-      </h4>
-    </div>
-  ))}
-</div>
-
-            <div className="mt-6 text-center text-sm italic text-gray-500">
-              Download the app to see the prices.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Package Inclusions */}
-      <div className="mb-16">
-        <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
-          <div className="flex items-center mb-6">
-            <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
-              Complete Inclusions
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Elegant theme backdrop with artificial flowers',
-              'Couch and red carpet,candle holder with candle',
-              'Arch entrance with artificial leaves and flowers',
-              'Cake and gift tables with skirting',
-              'Presidential tables with tiffany chairs',
-              'Round tables with white linen and array color topper',
-              'Artificial flowers with vase & table numbers',
-              'Monoblock chairs with cover & array color ribbons',
-              'Buffet long table with skirting & centerpiece',
-              'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
-              'Uniformed waiters and food server',
-              'Purified tube ice and mineral water'
-            ].map((inclusion, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
-              >
-                <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{inclusion}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Note */}
-      <div className="text-center">
-        <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
-          ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+              {/* Package Pricing */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Crown className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { pax: '200 Pax' },
+                      { pax: '100 Pax' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+                      >
+                        <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+                          {item.pax}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 text-center text-sm italic text-gray-500">
+                    Download the app to see the prices.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Inclusions */}
+            <div className="mb-16">
+              <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
+                <div className="flex items-center mb-6">
+                  <Crown className="w-6 h-6 text-green-500 mr-2" />
+                  <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
+                    Complete Inclusions
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Elegant theme backdrop with artificial flowers',
+                    'Couch and red carpet,candle holder with candle',
+                    'Arch entrance with artificial leaves and flowers',
+                    'Cake and gift tables with skirting',
+                    'Presidential tables with tiffany chairs',
+                    'Round tables with white linen and array color topper',
+                    'Artificial flowers with vase & table numbers',
+                    'Monoblock chairs with cover & array color ribbons',
+                    'Buffet long table with skirting & centerpiece',
+                    'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
+                    'Uniformed waiters and food server',
+                    'Purified tube ice and mineral water'
+                  ].map((inclusion, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                      <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="text-center">
+              <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
+                ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {themeId === 'debutant-treasures' && (
-  <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
+        <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
-    <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
-        {theme.title} Inclusions & Packages
-      </h2>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
-        A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
-      </p>
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
+              {theme.title} Inclusions & Packages
+            </h2>
+            <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
+              A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
+            </p>
 
-      {/* Food Menu + Pricing */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Food Menu */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
-              {Object.entries(foodIcons1).map(([label, Icon], index) => (
-                <div
-                  key={index}
-                  className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 mb-1" />
-                  {label}
+            {/* Food Menu + Pricing */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+              {/* Food Menu */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Utensils className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
+                    {Object.entries(foodIcons1).map(([label, Icon], index) => (
+                      <div
+                        key={index}
+                        className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
+                      >
+                        <Icon className="w-5 h-5 mb-1" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Package Pricing */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
-            </div>
-            <div className="space-y-6">
-  {[
-    { pax: '200 Pax' },
-    { pax: '100 Pax' }
-  ].map((item, idx) => (
-    <div
-      key={idx}
-      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
-    >
-      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
-        {item.pax}
-      </h4>
-    </div>
-  ))}
-</div>
-
-            <div className="mt-6 text-center text-sm italic text-gray-500">
-              Download the app to see the prices.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Package Inclusions */}
-      <div className="mb-16">
-        <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
-          <div className="flex items-center mb-6">
-            <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
-              Complete Inclusions
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Elegant theme backdrop with artificial flowers',
-              'Couch and red carpet,candle holder with candle',
-              'Arch entrance with artificial leaves and flowers',
-              'Cake and gift tables with skirting',
-              'Presidential tables with tiffany chairs',
-              'Round tables with white linen and array color topper',
-              'Artificial flowers with vase & table numbers',
-              'Monoblock chairs with cover & array color ribbons',
-              'Buffet long table with skirting & centerpiece',
-              'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
-              'Uniformed waiters and food server',
-              'Purified tube ice and mineral water'
-            ].map((inclusion, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
-              >
-                <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{inclusion}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Note */}
-      <div className="text-center">
-        <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
-          ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+              {/* Package Pricing */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Crown className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { pax: '200 Pax' },
+                      { pax: '100 Pax' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+                      >
+                        <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+                          {item.pax}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 text-center text-sm italic text-gray-500">
+                    Download the app to see the prices.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Inclusions */}
+            <div className="mb-16">
+              <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
+                <div className="flex items-center mb-6">
+                  <Crown className="w-6 h-6 text-green-500 mr-2" />
+                  <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
+                    Complete Inclusions
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Elegant theme backdrop with artificial flowers',
+                    'Couch and red carpet,candle holder with candle',
+                    'Arch entrance with artificial leaves and flowers',
+                    'Cake and gift tables with skirting',
+                    'Presidential tables with tiffany chairs',
+                    'Round tables with white linen and array color topper',
+                    'Artificial flowers with vase & table numbers',
+                    'Monoblock chairs with cover & array color ribbons',
+                    'Buffet long table with skirting & centerpiece',
+                    'Ceramic plates (IKEA), highball glasses, goblets, sterilized spoons & forks (IKEA)',
+                    'Uniformed waiters and food server',
+                    'Purified tube ice and mineral water'
+                  ].map((inclusion, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                      <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="text-center">
+              <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
+                ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {themeId === 'birthday-baptismal-adventure' && (
-  <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
+        <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
-    <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
-        {theme.title} Inclusions & Packages
-      </h2>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
-        A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
-      </p>
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
+              {theme.title} Inclusions & Packages
+            </h2>
+            <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
+              A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
+            </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Food Menu */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
-              {Object.entries(foodIcons2).map(([label, Icon], index) => (
-                <div
-                  key={index}
-                  className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 mb-1" />
-                  {label}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+              {/* Food Menu */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Utensils className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
+                    {Object.entries(foodIcons2).map(([label, Icon], index) => (
+                      <div
+                        key={index}
+                        className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
+                      >
+                        <Icon className="w-5 h-5 mb-1" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Package Pricing */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
-            </div>
-            <div className="space-y-6">
-  {[
-    { pax: '200 Pax' },
-    { pax: '100 Pax' }
-  ].map((item, idx) => (
-    <div
-      key={idx}
-      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
-    >
-      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
-        {item.pax}
-      </h4>
-    </div>
-  ))}
-</div>
-
-            <div className="mt-6 text-center text-sm italic text-gray-500">
-              Download the app to see the prices.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Package Inclusions */}
-      <div className="mb-16">
-        <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
-          <div className="flex items-center mb-6">
-            <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
-              Complete Inclusions
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Basic backdrop of your choice theme with couch',
-              'Balloons backdrop, balloons entrance arch',
-              'Cake and gift tables with skirting',
-              'Balloons table centerpiece',
-              'Round tables with white linen and array color topper',
-              'Monoblock chairs with cover & array color ribbons',
-              'Buffet long table with skirting & centerpiece',
-              'Ceramic plates, highball glasses, goblets, sterilized spoons & forks',
-              'Uniformed waiters and food server',
-              'Purified tube ice and mineral water'
-            ].map((inclusion, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
-              >
-                <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{inclusion}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Note */}
-      <div className="text-center">
-        <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
-          ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+              {/* Package Pricing */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Crown className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { pax: '200 Pax' },
+                      { pax: '100 Pax' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+                      >
+                        <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+                          {item.pax}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 text-center text-sm italic text-gray-500">
+                    Download the app to see the prices.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Inclusions */}
+            <div className="mb-16">
+              <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
+                <div className="flex items-center mb-6">
+                  <Crown className="w-6 h-6 text-green-500 mr-2" />
+                  <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
+                    Complete Inclusions
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Basic backdrop of your choice theme with couch',
+                    'Balloons backdrop, balloons entrance arch',
+                    'Cake and gift tables with skirting',
+                    'Balloons table centerpiece',
+                    'Round tables with white linen and array color topper',
+                    'Monoblock chairs with cover & array color ribbons',
+                    'Buffet long table with skirting & centerpiece',
+                    'Ceramic plates, highball glasses, goblets, sterilized spoons & forks',
+                    'Uniformed waiters and food server',
+                    'Purified tube ice and mineral water'
+                  ].map((inclusion, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                      <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="text-center">
+              <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
+                ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {themeId === 'birthday-baptismal-fantasy' && (
-  <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
+        <section className="py-24 bg-gradient-to-b from-white to-amber-50 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 bg-center bg-cover pointer-events-none"></div>
 
-    <div className="max-w-6xl mx-auto px-6 relative z-10">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
-        {theme.title} Inclusions & Packages
-      </h2>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
-        A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
-      </p>
+          <div className="max-w-6xl mx-auto px-6 relative z-10">
+            <h2 className="text-4xl font-bold text-center text-gray-900 mb-6 tracking-tight elegant-font">
+              {theme.title} Inclusions & Packages
+            </h2>
+            <p className="text-center text-gray-600 max-w-xl mx-auto mb-16 text-lg">
+              A carefully curated setup that brings beauty, warmth, and sophistication to your special day.
+            </p>
 
-      {/* Food Menu + Pricing */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {/* Food Menu */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Utensils className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
-              {Object.entries(foodIcons1).map(([label, Icon], index) => (
-                <div
-                  key={index}
-                  className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
-                >
-                  <Icon className="w-5 h-5 mb-1" />
-                  {label}
+            {/* Food Menu + Pricing */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+              {/* Food Menu */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Utensils className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Food Menu</h3>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-gray-700">
+                    {Object.entries(foodIcons1).map(([label, Icon], index) => (
+                      <div
+                        key={index}
+                        className="bg-amber-100/30 border border-amber-200 text-amber-900 px-4 py-3 rounded-xl text-center text-sm font-medium shadow-inner flex flex-col items-center gap-1"
+                      >
+                        <Icon className="w-5 h-5 mb-1" />
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Package Pricing */}
-        <div>
-          <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
-            <div className="flex items-center mb-6">
-              <Crown className="w-6 h-6 text-amber-500 mr-2" />
-              <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
-            </div>
-            <div className="space-y-6">
-  {[
-    { pax: '200 Pax' },
-    { pax: '100 Pax' }
-  ].map((item, idx) => (
-    <div
-      key={idx}
-      className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
-    >
-      <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
-        {item.pax}
-      </h4>
-    </div>
-  ))}
-</div>
-
-            <div className="mt-6 text-center text-sm italic text-gray-500">
-              Download the app to see the prices.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Package Inclusions */}
-      <div className="mb-16">
-        <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
-          <div className="flex items-center mb-6">
-            <Crown className="w-6 h-6 text-green-500 mr-2" />
-            <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
-              Complete Inclusions
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Basic backdrop of your choice theme with couch',
-              'Balloons backdrop, balloons entrance arch',
-              'Cake and gift tables with skirting',
-              'Balloons table centerpiece',
-              'Round tables with white linen and array color topper',
-              'Monoblock chairs with cover & array color ribbons',
-              'Buffet long table with skirting & centerpiece',
-              'Ceramic plates , highball glasses, goblets, sterilized spoons & forks ',
-              'Uniformed waiters and food server',
-              'Purified tube ice and mineral water'
-            ].map((inclusion, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
-              >
-                <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-700 leading-relaxed">{inclusion}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Note */}
-      <div className="text-center">
-        <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
-          ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
-        </div>
-      </div>
-    </div>
-  </section>
-)}
+              {/* Package Pricing */}
+              <div>
+                <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-amber-100 p-8 h-full">
+                  <div className="flex items-center mb-6">
+                    <Crown className="w-6 h-6 text-amber-500 mr-2" />
+                    <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">Packages</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {[
+                      { pax: '200 Pax' },
+                      { pax: '100 Pax' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-amber-100/40 border border-amber-200 px-6 py-5 rounded-xl shadow-sm text-center"
+                      >
+                        <h4 className="text-xl font-bold text-amber-700 drop-shadow-sm">
+                          {item.pax}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 text-center text-sm italic text-gray-500">
+                    Download the app to see the prices.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Package Inclusions */}
+            <div className="mb-16">
+              <div className="bg-white bg-opacity-90 backdrop-blur-md shadow-xl rounded-2xl border border-gray-200 p-8">
+                <div className="flex items-center mb-6">
+                  <Crown className="w-6 h-6 text-green-500 mr-2" />
+                  <h3 className="text-2xl font-semibold text-gray-800 tracking-tight elegant-font">
+                    Complete Inclusions
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    'Basic backdrop of your choice theme with couch',
+                    'Balloons backdrop, balloons entrance arch',
+                    'Cake and gift tables with skirting',
+                    'Balloons table centerpiece',
+                    'Round tables with white linen and array color topper',
+                    'Monoblock chairs with cover & array color ribbons',
+                    'Buffet long table with skirting & centerpiece',
+                    'Ceramic plates , highball glasses, goblets, sterilized spoons & forks ',
+                    'Uniformed waiters and food server',
+                    'Purified tube ice and mineral water'
+                  ].map((inclusion, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gradient-to-r from-white via-gray-50 to-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+                    >
+                      <Check className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 leading-relaxed">{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Note */}
+            <div className="text-center">
+              <div className="inline-block px-6 py-4 bg-amber-100 text-amber-900 border-l-4 border-amber-500 rounded-md shadow-sm text-sm font-medium italic">
+                ⏳ Note: 4 to 5 hours limit time. Excess hours will be charged.
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Download App CTA */}
-<div className="py-16 bg-amber-600">
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 className="text-3xl font-bold text-white mb-4 elegant-font">
-      Ready to Book Your {theme.title} Celebration?
-    </h2>
-    <p className="text-xl text-amber-100 mb-8">
-      Download our app to make reservations and book your {theme.title.toLowerCase()} package easily.
-    </p>
+      <div className="py-16 bg-amber-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4 elegant-font">
+            Ready to Book Your {theme.title} Celebration?
+          </h2>
+          <p className="text-xl text-amber-100 mb-8">
+            Download our app to make reservations and book your {theme.title.toLowerCase()} package easily.
+          </p>
 
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <button 
-        className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
-        onClick={() => window.open(androidUrl, '_blank')}
-      >
-        <Download className="w-5 h-5 mr-2" />
-        Download Our App
-      </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              className="bg-white text-amber-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
+              onClick={() => window.open(androidUrl, '_blank')}
+            >
+              <Download className="w-5 h-5 mr-2" />
+              Download Our App
+            </button>
 
-      <Link to="/how-it-works">
-        <button 
-          className="border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200"
-          onClick={(e) => {
-            // Check if it's a touch device (mobile)
-            if ('ontouchstart' in window) {
-              e.preventDefault();
-              setTimeout(() => {
-                // Navigation will be handled by the Link component
-                // We need to manually navigate on mobile
-                navigate("/how-it-works");
-              }, 200);
-            }
-            // For non-touch devices, the Link component will handle navigation
-          }}
-        >
-          Learn More
-        </button>
-      </Link>
-    </div>
-  </div>
-</div>
+            <Link to="/how-it-works">
+              <button
+                className="border-2 border-white text-white hover:bg-white hover:text-amber-600 px-8 py-3 rounded-lg font-semibold transition-all duration-200"
+                onClick={(e) => {
+                  // Check if it's a touch device (mobile)
+                  if ('ontouchstart' in window) {
+                    e.preventDefault();
+                    setTimeout(() => {
+                      // Navigation will be handled by the Link component
+                      // We need to manually navigate on mobile
+                      navigate("/how-it-works");
+                    }, 200);
+                  }
+                  // For non-touch devices, the Link component will handle navigation
+                }}
+              >
+                Learn More
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
